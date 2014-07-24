@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="vmApp">
+<head>
+<title>Welkom bij Verse Markt!</title>
+<link href="../css/bootstrap.css" rel="stylesheet" />
+<link href="../css/bootstrap-theme.css" rel="stylesheet" />
+<script src="../angular/angular.min.js"> </script>
+<script>
+    var model = {
+        user: "Adam",
+        items: [{ del: false, name: "Mangos", qty: "1.5", kgprice:"2", price: 2*1.5, pic: "src.." },
+            { del: false, name: "Aardbeien", qty: "", kgprice:"", price: "", pic: "src.." },
+            { del: false, name: "Druiven", qty: "", kgprice:"", price: "", pic: "src.." },
+            { del: false, name: "Guabanas", qty: "", kgprice:"", price: "", pic: "src.." }]
+        
+    };
+    var vmApp = angular.module("vmApp", []);
+    
+    vmApp.controller("VMCtrl", function ($scope) {
+        $scope.vm = model;
+    
+    $scope.addNewItem = function (nameNewItem, qtyNewItem) {
+        $scope.vm.items.push({del: false, name: nameNewItem, qty: qtyNewItem, kgprice: "", price: "", pic: "src.." });
+    }
+    
+    });
+    
+</script>
+</head>
+<body ng-controller="VMCtrl">
+<div class="page-header">
+<h1>
+Verse Markt   
+</h1>
+</div>
+<div class="panel">
+    <h3>
+    {{vm.user}}'s verse producten
+    <span class="label label-default">{{vm.items.length}}</span>
+</h3>
+<div class="input-group">
+<!--<input class="form-control" />-->
+    <h5>Naam</h5>
+    <input type="text" class="form-control" ng-model="nameNewItem" />
+    <h5>Aantal (Kg)</h5>
+    <input type="number" class="form-control" ng-model="qtyNewItem" />
+<!--    <input type="file" class="form-control" ng-model="picNewItem" />-->
+<span class="input-group-btn">
+<button class="btn btn-default" ng-click="addNewItem(nameNewItem, qtyNewItem, picNewItem)">Add</button>
+</span>
+</div>
+    <br />
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Verse</th>
+<th>Aantal</th>
+<th>Prijs</th>
+<th>Image</th>
+<th>Select</th>
+</tr>
+</thead>
+<tbody>
+    <tr ng-repeat="item in vm.items">
+        <td>{{item.name}}</td>
+        <td>{{item.qty}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.pic}}</td>
+        <td>
+            <input type="checkbox" ng-model="item.del" />
+        </td>
+    </tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
