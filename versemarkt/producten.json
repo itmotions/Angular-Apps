@@ -1,4 +1,4 @@
-[{ "hide": false, "name": "Mangos", "qty": "1.5", "kgprice":"2", "price": 2*1.5, "pic": "src.." },
+[{ "hide": false, "name": "Mangos", "qty": "1.5", "kgprice":"2", "price": "2*1.5", "pic": "src.." },
             { "hide": false, "name": "Aardbeien", "qty": "", "kgprice":"", "price": "", "pic": "src.." },
             { "hide": false, "name": "Druiven", "qty": "", "kgprice":"", "price": "", "pic": "src.." },
             { "hide": false, "name": "Guabanas", "qty": "", "kgprice":"", "price": "", "pic": "src.." }]
