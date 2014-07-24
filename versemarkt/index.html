@@ -35,7 +35,7 @@
         $scope.vm = model;
         
     $scope.countVisibleItems = function () {
-        var countV = 0
+        var countV = 0;
         angular.forEach($scope.vm.items, function (item) {
             if (!item.hide) {countV++}
         });
@@ -43,7 +43,7 @@
     }
     
     $scope.countHiddenItems = function () {
-        var countH = 0
+        var countH = 0;
         angular.forEach($scope.vm.items, function (item) {
             if (item.hide) {countH++}
     
@@ -53,6 +53,14 @@
     
     $scope.addNewItem = function (nameNewItem, qtyNewItem) {
         $scope.vm.items.push({hide: false, name: nameNewItem, qty: qtyNewItem, kgprice: "", price: "", pic: "src.." });
+    }
+    
+    $scope.calculatePrice = function () {
+        var price = 0;
+        angular.forEach($scope.vm.items, function (item) {
+            item.price = (item.qty * item.kgprice)
+        });
+        return price;
     }
     
     });
@@ -96,7 +104,7 @@ Verse Markt
     <tr ng-repeat="item in vm.items | hiddenItems:showHidden | orderBy:'name'">
         <td>{{item.name}}</td>
         <td>{{item.qty}}</td>
-        <td>{{item.price}}</td>
+        <td>{{$scope.calculatePrice()}}</td>
         <td>{{item.pic}}</td>
         <td>
             <input type="checkbox" ng-model="item.hide" />
