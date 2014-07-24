@@ -61,7 +61,7 @@ Verse Markt
 </tr>
 </thead>
 <tbody>
-    <tr ng-repeat="item in vm.items">
+    <tr ng-repeat="item in vm.items | orderBy:'name'">
         <td>{{item.name}}</td>
         <td>{{item.qty}}</td>
         <td>{{item.price}}</td>
