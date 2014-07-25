@@ -4,6 +4,29 @@
     padding-right: 15%;
 }
 
+.icon-home:before {
+    content: "\f015";
+}
+
+.icon-leaf:before {
+    content: "\f06c";
+}
+
+.icon-shopping-cart:before {
+    content: "\f07a";
+}
+
+.icon-money:before {
+    content: "\f0a1";
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
 
 
 .btn-home {
