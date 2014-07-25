@@ -19,3 +19,21 @@ h3, .h3 {
 body {
      background-image: url("http://cache.gawkerassets.com/assets/images/gizmodo/2011/08/young_steve_jobs21.jpg");
 }
+ol, ul {
+    display: inline-flex;
+    list-style: none inside none;
+}
+li {
+    padding-right: 8px;
+}
+
+.copyright {
+    color: #fff;
+}
+
+.footer.inline-list {
+    bottom: 30px;
+    font-size: 11px;
+    position: absolute;
+    
+}
