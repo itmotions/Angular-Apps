@@ -5,7 +5,7 @@
 <title>Verse Markt</title>
 <link href="../css/bootstrap.css" rel="stylesheet" />
 <link href="../css/bootstrap-theme.css" rel="stylesheet" />
-<link href="versemarkt-theme.css" rel="stylesheet" />
+<link href="versemarkt.css" rel="stylesheet" />
 <script src="../angular/angular.min.js"> </script> 
 </head>
     
@@ -17,14 +17,13 @@ Verse Markt
     </div>
 <div class="panel">
    
-<div class="input-group">
-<!--<input class="form-control" />-->
-    <label><input type="text" class="form-control" ng-model="priceItem" >Hoe veel heb je voor je {{vm.item.random}} betaald?</label>
+
+    <div class="home-search">
+    <h4><label><input type="text" class="form-control" ng-model="priceItem" >Hoe veel heb je voor je {{vm.item.random}} betaald?</label></h4>
     
-    
-<span class="input-group-btn">
-<button class="btn btn-default" ng-click="searchItemsWithinPriceItem"(priceItem, locationItem, locationUser)>Spaar</button>
-</span>
+<span class="home-search-btn">
+<button class="btn btn-default" ng-click="searchItemsWithinPriceItem"(priceItem, locationItem, locationUser)>Spaar</button></span>
+</div>
   
 </div>
        <h3>
