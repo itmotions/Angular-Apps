@@ -5,6 +5,7 @@
 <title>Verse Markt</title>
 <link href="../css/bootstrap.css" rel="stylesheet" />
 <link href="../css/bootstrap-theme.css" rel="stylesheet" />
+<link href="versemarkt-theme.css" rel="stylesheet" />
 <script src="../angular/angular.min.js"> </script> 
 </head>
     
@@ -15,10 +16,7 @@ Verse Markt
 </h1>
     </div>
 <div class="panel">
-    <h3>
-    Verse Markt verse producten
-    <span class="label label-default" ng-hide="countVisibleItems() ==0">{{countVisibleItems()}}</span>
-</h3>
+   
 <div class="input-group">
 <!--<input class="form-control" />-->
     <label><input type="text" class="form-control" ng-model="priceItem" >Hoe veel heb je voor je {{vm.item.random}} betaald?</label>
@@ -27,7 +25,12 @@ Verse Markt
 <span class="input-group-btn">
 <button class="btn btn-default" ng-click="searchItemsWithinPriceItem"(priceItem, locationItem, locationUser)>Spaar</button>
 </span>
+  
 </div>
+       <h3>
+    Verse Markt verse producten
+    <span class="label label-default" ng-hide="countVisibleItems() ==0">{{countVisibleItems()}}</span>
+</h3>
     <br />
 </body>
 </html>
