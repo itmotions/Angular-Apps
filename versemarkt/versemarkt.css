@@ -14,7 +14,7 @@ h3, .h3 {
 }
 .home-search, .form-control {
     align-items: center;
-    text-align: -moz-center;
+    text-align: center;
 }
 body {
      background-image: url("http://cache.gawkerassets.com/assets/images/gizmodo/2011/08/young_steve_jobs21.jpg");
