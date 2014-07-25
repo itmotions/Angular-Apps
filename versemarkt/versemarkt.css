@@ -1,6 +1,6 @@
 
 h1, .h1 {
-    font-size: 48px;
+    font-size: 4em;
     color: #ffffff;
     text-align: center;
 }
@@ -12,6 +12,13 @@ h3, .h3 {
     text-align: center;
     
 }
+
+.btn-home {
+    background-color: green;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
 .home-search, .form-control {
     align-items: center;
     text-align: center;
@@ -33,7 +40,7 @@ li {
 
 .footer.inline-list {
     bottom: 30px;
-    font-size: 11px;
+    font-size: 0.9em;
     position: absolute;
     
 }
