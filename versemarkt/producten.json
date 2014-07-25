@@ -1,4 +1,4 @@
-[{ "hide": false, "name": "Mangos", "qty": "1.5", "kgprice":"2", "price": "", "pic": "src.." },
-            { "hide": false, "name": "Aardbeien", "qty": "", "kgprice":"", "price": "", "pic": "src.." },
-            { "hide": false, "name": "Druiven", "qty": "", "kgprice":"", "price": "", "pic": "src.." },
-            { "hide": false, "name": "Guabanas", "qty": "", "kgprice":"", "price": "", "pic": "src.." }]
+[{ "hide": false, "name": "Mangos", "qty": 1.5, "kgprice":3, "price": "", "pic": "src.." },
+            { "hide": false, "name": "Aardbeien", "qty": 0.5, "kgprice":4, "price": "", "pic": "src.." },
+            { "hide": false, "name": "Druiven", "qty": 0.5, "kgprice":4, "price": "", "pic": "src.." },
+            { "hide": false, "name": "Guabanas", "qty": 1, "kgprice":5.5, "price": "", "pic": "src.." }]

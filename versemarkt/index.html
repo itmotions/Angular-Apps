@@ -55,11 +55,9 @@
         $scope.vm.items.push({hide: false, name: nameNewItem, qty: qtyNewItem, kgprice: "", price: "", pic: "src.." });
     }
     
-    $scope.calculatePrice = function () {
-        var price = 0;
-        angular.forEach($scope.vm.items, function (item) {
-            item.price = (item.qty * item.kgprice)
-        });
+    $scope.calculatePrice = function (qty, kgprice) {
+        var price = (qty) * (kgprice);
+        
         return price;
     }
     
@@ -104,7 +102,7 @@ Verse Markt
     <tr ng-repeat="item in vm.items | hiddenItems:showHidden | orderBy:'name'">
         <td>{{item.name}}</td>
         <td>{{item.qty}}</td>
-        <td>{{$scope.calculatePrice()}}</td>
+        <td>{{calculatePrice(item.qty, item.kgprice)}}</td>
         <td>{{item.pic}}</td>
         <td>
             <input type="checkbox" ng-model="item.hide" />
