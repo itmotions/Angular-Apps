@@ -1,7 +1,16 @@
 
 .nav {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 12%;
+}
+
+.nav-else {
+    padding: 8px;
+}
+
+.search-query {
+    border-radius: 14px;
+    padding: 4px 9px;
+    border: 1px solid #151515;
 }
 
 .icon-home:before {
@@ -50,8 +59,9 @@ padding-bottom: 33px;
     text-align: center;
 }
 
-.container. .page-header {
+.container {
     margin-bottom: 25px;
+    padding-top: 8px;
 }
 
 h1, .h1 {
