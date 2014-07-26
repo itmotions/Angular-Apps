@@ -135,13 +135,14 @@ Verse Markt
 </h3>
 <div class="input-group">
 <!--<input class="form-control" />-->
-    <label><input type="search" class="form-control" ng-model="nameNewItem" >waar heb je trek in vandag?</label>
+    <label><input type="text" class="form-control" ng-model="nameNewItem" >Naam</label>
+    
+    <label><input type="number" class="form-control" ng-model="qtyNewItem" >Aantal (Kg)</label>
     
 <!--    <input type="file" class="form-control" ng-model="picNewItem" />-->
-
-<span>
-    <button class="btn btn-sell" ng-click="searchItemsWithinPriceItem"(priceItem, locationItem, locationUser)>Zoek</button>
-        </span>
+<span class="input-group-btn">
+<button class="btn btn-default" ng-click="addNewItem(nameNewItem, qtyNewItem, picNewItem)">Add</button>
+</span>
 </div>
     <br />
 <table class="table table-striped">
@@ -151,7 +152,7 @@ Verse Markt
 <th>Aantal</th>
 <th>Prijs</th>
 <th>Foto</th>
-<th>In 't maatje</th>
+<th>Verberg</th>
 </tr>
 </thead>
 <tbody>
