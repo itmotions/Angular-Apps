@@ -50,6 +50,11 @@
     
 }
 
+.panel {
+padding-left: 8px;
+padding-right: 8px;
+}
+
 .panel-sell, .panel-buy {
 padding-bottom: 33px;
 }
