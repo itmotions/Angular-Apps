@@ -53,8 +53,8 @@
         return countH;
     }
     
-    $scope.addNewItem = function (nameNewItem, qtyNewItem) {
-        $scope.vm.items.push({hide: false, name: nameNewItem, qty: qtyNewItem, kgprice: "", price: "", pic: "src.." });
+    $scope.addNewItem = function (nameNewItem, qtyNewItem, kgpriceNewItem, picNewItem) {
+        $scope.vm.items.push({hide: false, name: nameNewItem, qty: qtyNewItem, kgprice: kgpriceNewItem, price: "", pic: picNewItem });
     }
     
     $scope.calculatePrice = function (fqty, fkgprice) {
@@ -138,11 +138,15 @@ Verse Markt
 <!--<input class="form-control" />-->
     <label><input type="text" class="form-control" ng-model="nameNewItem" >Naam</label>
     
-    <label><input type="number" class="form-control" ng-model="qtyNewItem" >Aantal (Kg)</label>
+    <label><input type="number" class="form-control" ng-model="qtyNewItem" >Kg</label>
+    
+    <label><input type="number" class="form-control" ng-model="kgpriceNewItem" >Prijs per Kg</label>
+    
+     <label><input type="file" class="form-control" ng-model="picNewItem" >Foto</label>
     
 <!--    <input type="file" class="form-control" ng-model="picNewItem" />-->
 <span class="input-group-btn">
-<button class="btn btn-default" ng-click="addNewItem(nameNewItem, qtyNewItem, picNewItem)">Add</button>
+<button class="btn btn-default" ng-click="addNewItem(nameNewItem, qtyNewItem, kgpriceNewItem, picNewItem)">Add</button>
 </span>
 </div>
     <br />
@@ -150,7 +154,7 @@ Verse Markt
 <thead>
 <tr>
 <th>Verse</th>
-<th>Aantal</th>
+<th>Kg</th>
 <th>Prijs</th>
 <th>Foto</th>
 <th>Verberg</th>

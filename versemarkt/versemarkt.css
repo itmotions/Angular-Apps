@@ -89,6 +89,13 @@ h3, .h3 {
 body {
      background-image: url("http://cache.gawkerassets.com/assets/images/gizmodo/2011/08/young_steve_jobs21.jpg");
 }
+
+
+.input-group {
+    padding-top: 8px;
+}
+
+
 ol, ul {
     display: inline-flex;
     list-style: none inside none;
