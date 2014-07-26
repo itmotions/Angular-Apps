@@ -29,11 +29,20 @@
 }
 
 
-.btn-home {
+.btn-home, .btn-sell, .btn-buy {
     background-color: green;
     color: #fff;
     font-size: 1.5em;
     margin-bottom: 8px;
+}
+
+.btn-sell, .btn-buy {
+    float: right;
+    
+}
+
+.panel-sell, .panel-buy {
+padding-bottom: 33px;
 }
 
 .home-search, .form-control {

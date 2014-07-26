@@ -4,11 +4,11 @@
 <title>Koop je verse producten</title>
 <link href="../css/bootstrap.css" rel="stylesheet" />
 <link href="../css/bootstrap-theme.css" rel="stylesheet" />
-<link href="versemarkt-theme.css" rel="stylesheet" />
+<link href="versemarkt.css" rel="stylesheet" />
 <script src="../angular/angular.min.js"> </script>
    <script>
     var model = {
-        user: "Adam"        
+        user: "Eve"        
     };
     
     var vmApp = angular.module("vmApp", []);
@@ -73,7 +73,7 @@
 Verse Markt   
 </h1>
     </div>
-<div class="panel">
+<div class="panel panel-buy">
     <h3>
     {{vm.user}}'s verse producten
     <span class="label label-default" ng-hide="countVisibleItems() ==0">{{countVisibleItems()}}</span>
@@ -116,6 +116,9 @@ Verse Markt
     <label><input type="checkbox" ng-model="showHidden"> Toon verborgen producten </label>
         <span class="label label-default" ng-hide="countHiddenItems() ==0">{{countHiddenItems()}}</span>
     </div>
+    <span>
+    <button class="btn btn-sell" ng-click="searchItemsWithinPriceItem"(priceItem, locationItem, locationUser)>Koop</button>
+        </span>
 </div>
 </body>
 </html>
