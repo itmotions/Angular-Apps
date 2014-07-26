@@ -67,10 +67,13 @@
     
 </script>
     
-    <header class="header">
+<header class="header">
+        
+<!-- Navigation -->         
+        
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner">
-<div class="container">
+<div class="container">   
 <ul class="nav-else">
 <li class="divider-vertical"></li>
 <li class="active">
@@ -101,14 +104,20 @@ Kweek
 </a>
 </li>
 </ul>
+    
+<!-- Search -->
+    
 <form class="navbar-search pull-right ng-pristine ng-valid" action="https://www.google.com/search" method="GET">
 <input class="search-query" type="text" placeholder="opzoek naar iets vers?" name="as_q">
 <input type="hidden" value="versemarkt.nl" name="as_sitesearch">
 </form>
+    
 </div>
 </div>
 </div>
 </header>
+    
+<!-- Main Header Region -->    
     
 </head>
 <body ng-controller="VMCtrl">
@@ -117,6 +126,9 @@ Kweek
 Verse Markt   
 </h1>
 </div>
+    
+<!-- Panel Main Content -->
+    
 <div class="panel panel-sell">
     <h3>
     {{vm.user}}'s verse producten
@@ -164,7 +176,10 @@ Verse Markt
     <button class="btn btn-sell" ng-click="searchItemsWithinPriceItem"(priceItem, locationItem, locationUser)>Verkoop</button>
         </span>
 </div>
-    <br />
+<br />    
+    
+<!-- Footer -->
+    
     <div class="footer inline-list">
 <ul>
 <li>
@@ -190,5 +205,6 @@ Verse Markt
 </li>
 </ul>
 </div>
+    
 </body>
 </html>
