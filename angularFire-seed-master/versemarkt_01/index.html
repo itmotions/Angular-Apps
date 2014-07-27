@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html ng-app="vmApp">
+    
+<head>
+<title>Verse Markt</title>
+<link href="css/bootstrap.css" rel="stylesheet" />
+<link href="css/bootstrap-theme.css" rel="stylesheet" />
+<link href="versemarkt/versemarkt.css" rel="stylesheet" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="angular/angular.min.js"> </script> 
+</head>
+    
+<body ng-controller="VMCtrl">
+
+<header class="header">
+    
+<!-- Navigation -->     
+    
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="brand" style="padding-top: 6px; padding-bottom: 0px;" href="http://angularjs.org">Made with love and  
+<img class="AngularJS-small" src="https://angularjs.org/img/AngularJS-small.png">
+</a>
+<ul class="nav">
+<li class="divider-vertical"></li>
+<li class="active">
+<a href="#/versemarkt.nl/">
+<i class="icon-home icon-white"></i>
+Home
+</a>
+</li>
+<li class="divider-vertical"></li>
+<li class="active">
+<a href="#/koop.html">
+<i class="icon-shopping-cart icon-white"></i>
+Koop
+</a>
+</li>
+<li class="divider-vertical"></li>
+<li class="active">
+<a href="#/verkoop.html">
+<i class="icon-money icon-white"></i>
+Verkoop
+</a>
+</li>
+<li class="divider-vertical"></li>
+<li class="active">
+<a href="#/kweek.html">
+<i class="icon-leaf icon-white"></i>
+Kweek
+</a>
+</li>
+</ul>
+    
+<!-- Search -->    
+    
+<form class="navbar-search pull-right ng-pristine ng-valid" action="https://www.google.com/search" method="GET">
+<input class="search-query" type="text" placeholder="opzoek naar iets vers?" name="as_q">
+<input type="hidden" value="versemarkt.nl" name="as_sitesearch">
+</form>
+
+</div>
+</div>
+</div>
+</header>
+ 
+<!-- Main Header Region -->    
+    
+<div class="page-header">
+<h1>
+Verse Markt   
+</h1>
+</div>
+    
+<!-- Panel Main Content -->
+    
+<div class="panel">
+   
+<h3>
+    verse producten
+    <span class="label label-default" ng-hide="countVisibleItems() ==0">{{countVisibleItems()}}</span>
+</h3>
+    <div class="home-search">
+    <h4><label><input type="text" class="form-control" ng-model="priceItem" >Hoe veel heb je voor je {{vm.item.random}} betaald?</label></h4>
+    
+
+<button class="btn btn-home" ng-click="searchItemsWithinPriceItem"(priceItem, locationItem, locationUser)>Spaar</button>
+</div>
+  
+</div>
+<br />
+    
+<!-- Footer -->
+    
+<div class="footer inline-list">
+<ul>
+<li>
+<a href="/about">About</a>
+</li>
+<li>
+<a href="/help">Help</a>
+</li>
+<li>
+<a href="/tos">Terms</a>
+</li>
+<li>
+<a href="/brand-assets">Brand</a>
+</li>
+<li>
+<a href="/advertise">Advertise</a>
+</li>
+<li>
+<a href="/business">Businesses</a>
+</li>
+<li>
+<span class="copyright"> © 2014 Verse Markt</span>
+</li>
+</ul>
+</div>
+</body>
+    
+</html>
