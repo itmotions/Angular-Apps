@@ -1,23 +1,38 @@
 
-<h2>Login Page</h2>
+<h3>Login Please</h3>
 
-<form>
+<form class="login">
+    <!-- <span ng-show="createMode"> Account type
+        <label>
+        koper<input type="checkbox" ng-model="buyerType" />
+    </label> 
+        <label>
+        verkoper<input type="checkbox" ng-model="sellerType" />
+    </label>
+        </span> -->
+    <div>
     <label>
         <span>email</span>
         <input type="text" ng-model="email" />
     </label>
+    </div>
+    <div>
     <label>
         <span>password</span>
         <input type="password" ng-model="pass" />
     </label>
+    </div>
+    <div>
     <label ng-cloak ng-show="createMode">
         <span>confirm pass</span>
         <input type="password" ng-model="confirm" />
     </label>
+    </div>
     <button ng-click="login()" ng-hide="createMode">Log In</button>
     <button ng-click="createMode = true" ng-hide="createMode">Register</button>
     <button ng-cloak ng-show="createMode" ng-click="createAccount()">Create Account</button>
     <button ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>
+    <button ng-cloak ng-show="createMode" ng-click="auth.login(facebook)">Sign up with Facebook</button>
 
     <p ng-show="err" class="error">{{err}}</p>
 </form>

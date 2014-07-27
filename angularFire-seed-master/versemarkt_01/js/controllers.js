@@ -3,6 +3,7 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
+
    .controller('HomeCtrl', ['$scope', 'syncData', function($scope, syncData) {
       syncData('syncedValue').$bind($scope, 'syncedValue');
    }])
@@ -156,4 +157,39 @@ angular.module('myApp.controllers', [])
          };
       }
 
-   }]);
+   }])
+
+.controller("SellCtrl", ['$scope', 'syncData',  function ($scope, syncData) {
+    
+    $scope.vm = model;
+    
+    $scope.addNewItem = function (nameNewItem, qtyNewItem, kgpriceNewItem, picNewItem) {
+        $scope.vm.items.push({hide: false, name: nameNewItem, qty: qtyNewItem, kgprice: kgpriceNewItem, price: "", pic: picNewItem });
+    };
+    
+    $scope.calculatePrice = function (fqty, fkgprice) {
+        var price = (fqty) * (fkgprice);
+        
+        return price;
+    };
+    
+        
+    $scope.countVisibleItems = function () {
+        var countV = 0;
+        angular.forEach($scope.vm.items, function (item) {
+            if (!item.hide) {countV++}
+        });
+        return countV;
+    };
+    
+    $scope.countHiddenItems = function () {
+        var countH = 0;
+        angular.forEach($scope.vm.items, function (item) {
+            if (item.hide) {countH++}
+    
+    });
+        return countH;
+    };
+    
+    
+    }]);

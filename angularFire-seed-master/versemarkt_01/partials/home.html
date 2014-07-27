@@ -1,10 +1,17 @@
-<h2>Home</h2>
-
 <p class="status good" ng-show-auth="login">Hello! You are logged in.</p>
 <p class="status" ng-show-auth="logout">Not logged in</p>
 <p class="status error" ng-show-auth="error">{{auth.error}}</p>
 
-<input ng-model="syncedValue" type="text" /> <b>{{syncedValue}}</b>
+<h3>
+    verse producten
+    <span class="label label-default" ng-hide="countVisibleItems() ==0">{{countVisibleItems()}}</span>
+</h3>
+    <div class="home-search">
+    <h4><label><input type="text" class="form-control" ng-model="syncedValue" >Hoe veel heb je voor je {{vm.item.random}} betaald? {{syncedValue}}</label></h4>
+    
 
-<p>Open <a ng-href="{{FBURL}}/syncedValue" target="_blank">Forge</a> or a <a target="_blank" href="#/">new window</a> to see this input update in real time:</p>
-
+<button class="btn btn-home" ng-click="searchItemsWithinPriceItem"(priceItem, locationItem, locationUser)>Spaar</button>
+</div>
+  
+</div>
+<br />
