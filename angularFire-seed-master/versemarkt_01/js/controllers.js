@@ -10,16 +10,34 @@ angular.module('myApp.controllers', [])
 
   .controller('ChatCtrl', ['$scope', 'syncData', function($scope, syncData) {
       $scope.newMessage = null;
+      $scope.name = null;
 
       // constrain number of messages by limit into syncData
       // add the array into $scope.messages
-      $scope.messages = syncData('messages', 10);
+      $scope.messages = syncData('messages', 5);
 
       // add new messages to the list
       $scope.addMessage = function() {
-         if( $scope.newMessage ) {
-            $scope.messages.$add({text: $scope.newMessage});
+         if( $scope.newMessage && $scope.name) {
+            $scope.messages.$add({text: $scope.newMessage, name: $scope.name});
             $scope.newMessage = null;
+            $scope.name = null;
+         }
+      };
+   }])
+
+      .controller('SellCtrl', ['$scope', 'syncData', function($scope, syncData) {
+      $scope.newProduct = null;
+
+      // constrain number of messages by limit into syncData
+      // add the array into $scope.messages
+      $scope.products = syncData('products', 5);
+
+      // add new messages to the list
+      $scope.addProduct = function() {
+         if( $scope.newProduct) {
+            $scope.products.$add({text: $scope.newMessage});
+            $scope.newProduct = null;
          }
       };
    }])

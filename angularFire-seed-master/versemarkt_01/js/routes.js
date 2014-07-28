@@ -22,7 +22,7 @@ angular.module('myApp.routes', ['ngRoute'])
        
       $routeProvider.when('/kweek', {
          templateUrl: 'partials/kweek.html',
-         controller: 'HomeCtrl'
+         controller: 'ChatCtrl'
       });
 
       $routeProvider.when('/account', {
