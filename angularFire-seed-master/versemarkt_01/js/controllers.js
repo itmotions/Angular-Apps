@@ -28,21 +28,34 @@ angular.module('myApp.controllers', [])
 
       .controller('SellCtrl', ['$scope', 'syncData', function($scope, syncData) {
       $scope.newProduct = null;
+      $scope.qty = null;
+      $scope.kgprice = null;
+      
 
       // constrain number of messages by limit into syncData
       // add the array into $scope.messages
       $scope.products = syncData('products', 5);
 
       // add new messages to the list
-      $scope.addProduct = function() {
-         if( $scope.newProduct) {
-            $scope.products.$add({text: $scope.newMessage});
+      $scope.addProduct = function (newProduct, qty, kgprice) {
+         if( $scope.newProduct && $scope.qty && $scope.kgprice) {
+            $scope.products.$add({name: $scope.newProduct, qty: $scope.qty, kgprice: $scope.kgprice, tprice: calculateprice(qty, kgprice)});
+             
+            $scope.calculatePrice = function (fqty, fkgprice) {
+        var price = (fqty) * (fkgprice);
+        
+        return price;
+    }
             $scope.newProduct = null;
+            $scope.qty = null;
+            $scope.kgprice = null;
          }
       };
    }])
 
    .controller('LoginCtrl', ['$scope', 'loginService', '$location', function($scope, loginService, $location) {
+      $scope.sellerType = false;
+      $scope.buyerType = false; 
       $scope.email = null;
       $scope.pass = null;
       $scope.confirm = null;
@@ -76,7 +89,7 @@ angular.module('myApp.controllers', [])
                else {
                   // must be logged in before I can write to my profile
                   $scope.login(function() {
-                     loginService.createProfile(user.uid, user.email);
+                     loginService.createProfile(user.uid, user.email, user.buyerType, user.sellerType);
                      $location.path('/account');
                   });
                }
@@ -93,6 +106,10 @@ angular.module('myApp.controllers', [])
          }
          else if( $scope.pass !== $scope.confirm ) {
             $scope.err = 'Passwords do not match';
+         }
+          
+         else if( $scope.buyerType == false && $scope.sellerType == false ) {
+            $scope.err = 'Please select an account type';
          }
          return !$scope.err;
       }
@@ -175,39 +192,4 @@ angular.module('myApp.controllers', [])
          };
       }
 
-   }])
-
-.controller("SellCtrl", ['$scope', 'syncData',  function ($scope, syncData) {
-    
-    $scope.vm = model;
-    
-    $scope.addNewItem = function (nameNewItem, qtyNewItem, kgpriceNewItem, picNewItem) {
-        $scope.vm.items.push({hide: false, name: nameNewItem, qty: qtyNewItem, kgprice: kgpriceNewItem, price: "", pic: picNewItem });
-    };
-    
-    $scope.calculatePrice = function (fqty, fkgprice) {
-        var price = (fqty) * (fkgprice);
-        
-        return price;
-    };
-    
-        
-    $scope.countVisibleItems = function () {
-        var countV = 0;
-        angular.forEach($scope.vm.items, function (item) {
-            if (!item.hide) {countV++}
-        });
-        return countV;
-    };
-    
-    $scope.countHiddenItems = function () {
-        var countH = 0;
-        angular.forEach($scope.vm.items, function (item) {
-            if (item.hide) {countH++}
-    
-    });
-        return countH;
-    };
-    
-    
-    }]);
+   }]);

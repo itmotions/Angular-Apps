@@ -1,5 +1,5 @@
 
-<script>
+<!-- <script>
     var model = {
         user: "Adam"        
     };
@@ -58,7 +58,7 @@
     });
     
 </script>
-   <div ng-controller="VMCtrl">
+   <div ng-controller="VMCtrl"> -->
 
 <!-- Panel Main Content -->
     
@@ -69,17 +69,17 @@
 </h3>
 <div class="input-group">
 <!--<input class="form-control" />-->
-    <label><input type="text" class="form-control" ng-model="nameNewItem" >Naam</label>
+    <label><input type="text" class="form-control" ng-model="newProduct" >Naam</label>
     
-    <label><input type="number" class="form-control" ng-model="qtyNewItem" >Kg</label>
+    <label><input type="number" class="form-control" ng-model="qty" >Kg</label>
     
-    <label><input type="number" class="form-control" ng-model="kgpriceNewItem" >Prijs per Kg</label>
+    <label><input type="number" class="form-control" ng-model="kgprice" >Prijs per Kg</label>
     
      <label><input type="file" class="form-control" ng-model="picNewItem" >Foto</label>
     
 <!--    <input type="file" class="form-control" ng-model="picNewItem" />-->
 <span class="input-group-btn">
-<button class="btn btn-default" ng-click="addNewItem(nameNewItem, qtyNewItem, kgpriceNewItem, picNewItem)">Add</button>
+<button class="btn btn-default" ng-click="addProduct(newProduct, qty, kgprice)">Add</button>
 </span>
 </div>
     <br />
