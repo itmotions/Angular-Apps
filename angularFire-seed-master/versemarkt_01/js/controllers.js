@@ -55,7 +55,7 @@ angular.module('myApp.controllers', [])
       $scope.products = syncData('products', 20);
 
       // add new messages to the list
-      $scope.addProduct = function (newProduct, qty, kgprice) {
+      $scope.addProduct = function (newProduct, qty, kgprice, tprice) {
          if( $scope.newProduct && $scope.qty && $scope.kgprice) {
             $scope.products.$add({name: $scope.newProduct, qty: $scope.qty, kgprice: $scope.kgprice, tprice: calculateprice(qty, kgprice)});
              
@@ -72,6 +72,23 @@ angular.module('myApp.controllers', [])
         var price = (fqty) * (fkgprice);
         
         return price;
+    }
+          
+    $scope.countVisibleProducts = function () {
+        var countV = 0;
+        angular.forEach($scope.products, function (product) {
+            if (!product.hide) {countV++}
+        });
+        return countV;
+    }
+    
+    $scope.countHiddenProducts = function () {
+        var countH = 0;
+        angular.forEach($scope.products, function (product) {
+            if (product.hide) {countH++}
+    
+    });
+        return countH;
     }
     
     
