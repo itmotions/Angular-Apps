@@ -4,10 +4,10 @@
 
 <h3>
     verse producten
-    <span class="label label-default" ng-hide="countVisibleItems() ==0">{{countVisibleItems()}}</span>
+    <span class="label label-default" ng-hide="countVisibleProducts() ==0">{{countVisibleProducts()}}</span>
 </h3>
     <div class="home-search">
-    <h4><label><input type="text" class="form-control" ng-model="syncedValue" >Hoe veel heb je voor je {{vm.item.random}} betaald? {{syncedValue}}</label></h4>
+    <h4><label><input type="text" class="form-control" ng-model="syncedValue" >Hoe veel heb je voor je {{product.random}} betaald? {{syncedValue}}</label></h4>
     
 
 <button class="btn btn-home" ng-click="searchItemsWithinPriceItem"(priceItem, locationItem, locationUser)>Spaar</button>

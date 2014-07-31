@@ -6,6 +6,24 @@ angular.module('myApp.controllers', [])
 
    .controller('HomeCtrl', ['$scope', 'syncData', function($scope, syncData) {
       syncData('syncedValue').$bind($scope, 'syncedValue');
+       
+       $scope.countVisibleProducts = function () {
+        var countV = 0;
+        angular.forEach($scope.products, function (product) {
+            if (!product.hide) {countV++}
+        });
+        return countV;
+    }
+    
+    $scope.countHiddenProducts = function () {
+        var countH = 0;
+        angular.forEach($scope.products, function (product) {
+            if (product.hide) {countH++}
+    
+    });
+        return countH;
+    }
+       
    }])
 
   .controller('ChatCtrl', ['$scope', 'syncData', function($scope, syncData) {
@@ -32,25 +50,31 @@ angular.module('myApp.controllers', [])
       $scope.kgprice = null;
       
 
-      // constrain number of messages by limit into syncData
-      // add the array into $scope.messages
-      $scope.products = syncData('products', 5);
+      // constrain number of products by limit into syncData
+      // add the array into $scope.products
+      $scope.products = syncData('products', 20);
 
       // add new messages to the list
       $scope.addProduct = function (newProduct, qty, kgprice) {
          if( $scope.newProduct && $scope.qty && $scope.kgprice) {
             $scope.products.$add({name: $scope.newProduct, qty: $scope.qty, kgprice: $scope.kgprice, tprice: calculateprice(qty, kgprice)});
              
-            $scope.calculatePrice = function (fqty, fkgprice) {
-        var price = (fqty) * (fkgprice);
-        
-        return price;
-    }
+           
             $scope.newProduct = null;
             $scope.qty = null;
             $scope.kgprice = null;
          }
+          
+          
       };
+          
+          $scope.calculatePrice = function (fqty, fkgprice) {
+        var price = (fqty) * (fkgprice);
+        
+        return price;
+    }
+    
+    
    }])
 
    .controller('LoginCtrl', ['$scope', 'loginService', '$location', function($scope, loginService, $location) {

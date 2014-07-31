@@ -1,71 +1,9 @@
-
-<!-- <script>
-    var model = {
-        user: "Adam"        
-    };
-    
-    var myApp = angular.module("myApp", []);
-    
-    myApp.run(function ($http) {
-        $http.get("producten.json").success(function (data) {
-        model.items = data;
-        });
-    
-    });
-    
-    myApp.filter("hiddenItems", function() {
-        return function (items, showHidden) {
-            var filterResultArr = [];
-            angular.forEach(items, function (item) {
-                if (item.hide == false || showHidden == true) {
-                    filterResultArr.push(item);
-                }
-            });
-            return filterResultArr;
-        }
-    });
-    
-    myApp.controller("VMCtrl", function ($scope) {
-        $scope.vm = model;
-        
-    $scope.countVisibleItems = function () {
-        var countV = 0;
-        angular.forEach($scope.vm.items, function (item) {
-            if (!item.hide) {countV++}
-        });
-        return countV;
-    }
-    
-    $scope.countHiddenItems = function () {
-        var countH = 0;
-        angular.forEach($scope.vm.items, function (item) {
-            if (item.hide) {countH++}
-    
-    });
-        return countH;
-    }
-    
-    $scope.addNewItem = function (nameNewItem, qtyNewItem, kgpriceNewItem, picNewItem) {
-        $scope.vm.items.push({hide: false, name: nameNewItem, qty: qtyNewItem, kgprice: kgpriceNewItem, price: "", pic: picNewItem });
-    }
-    
-    $scope.calculatePrice = function (fqty, fkgprice) {
-        var price = (fqty) * (fkgprice);
-        
-        return price;
-    }
-    
-    });
-    
-</script>
-   <div ng-controller="VMCtrl"> -->
-
 <!-- Panel Main Content -->
     
 <div class="panel panel-sell">
     <h3>
     {{my.user}}'s verse producten
-    <span class="label label-default" ng-hide="countVisibleItems() ==0">{{countVisibleItems()}}</span>
+    <span class="label label-default" ng-hide="countVisibleProducts() ==0">{{countVisibleProducts()}}</span>
 </h3>
 <div class="input-group">
 <!--<input class="form-control" />-->
@@ -77,7 +15,6 @@
     
      <label><input type="file" class="form-control" ng-model="picNewItem" >Foto</label>
     
-<!--    <input type="file" class="form-control" ng-model="picNewItem" />-->
 <span class="input-group-btn">
 <button class="btn btn-default" ng-click="addProduct(newProduct, qty, kgprice)">Add</button>
 </span>
@@ -94,23 +31,23 @@
 </tr>
 </thead>
 <tbody>
-    <tr ng-repeat="item in vm.items | hiddenItems:showHidden | orderBy:'name'">
-        <td>{{item.name}}</td>
-        <td>{{item.qty}}</td>
-        <td>{{calculatePrice(item.qty, item.kgprice)}}</td>
-        <td>{{item.pic}}</td>
+    <tr ng-repeat="product in products | hiddenProducts:showHidden | orderBy:'name'">
+        <td>{{product.name}}</td>
+        <td>{{product.qty}}</td>
+        <td>{{calculatePrice(product.qty, product.kgprice)}}</td>
+        <td>{{product.pic}}</td>
         <td>
-            <input type="checkbox" ng-model="item.hide" />
+            <input type="checkbox" ng-model="poduct.hide" />
         </td>
     </tr>
 </tbody>
 </table>
     <div class="checkbox-inline">
     <label><input type="checkbox" ng-model="showHidden"> Toon verborgen producten </label>
-        <span class="label label-default" ng-hide="countHiddenItems() ==0">{{countHiddenItems()}}</span>
+        <span class="label label-default" ng-hide="countHiddenProducts() ==0">{{countHiddenProducts()}}</span>
     </div>
     <span>
-    <button class="btn btn-sell" ng-click="searchItemsWithinPriceItem"(priceItem, locationItem, locationUser)>Verkoop</button>
+    <button class="btn btn-sell" ng-click="searchProductsWithinPriceInput"(priceProduct, locationProduct, locationUser)>Verkoop</button>
         </span>
 </div>
  </div>      

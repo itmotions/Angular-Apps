@@ -27,4 +27,16 @@ angular.module('myApp.filters', [])
       return function(items) {
          return toArray(items).slice().reverse();
       };
-   });
+   })
+
+    .filter("hiddenProducts", function() {
+        return function (products, showHidden) {
+            var filterResultArr = [];
+            angular.forEach(products, function (product) {
+                if (product.hide == false || showHidden == true) {
+                    filterResultArr.push(product);
+                }
+            });
+            return filterResultArr;
+              }
+    });
