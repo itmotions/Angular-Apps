@@ -1,17 +1,45 @@
 <!DOCTYPE html>
-<html ng-app="vmApp">
+<html ng-app="myApp">
     
 <head>
 <title>Verse Markt</title>
-<link href="css/bootstrap.css" rel="stylesheet" />
-<link href="css/bootstrap-theme.css" rel="stylesheet" />
-<link href="versemarkt/versemarkt.css" rel="stylesheet" />
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+        
+<link rel="stylesheet" href="css/versemarkt.css"  />
+    
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-<script src="angular/angular.min.js"> </script> 
+    
 </head>
     
-<body ng-controller="VMCtrl">
+<body ng-cloak>
+
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.js"></script>
+    
+<!-- Application JS files -->
+    
+  <script src="js/app.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/service.login.js"></script>
+  <script src="js/service.firebase.js"></script>
+  <script src="js/service.changeEmail.js"></script>
+  <script src="js/module.simpleLoginTools.js"></script>
+  <script src="js/module.routeSecurity.js"></script>
 
 <header class="header">
     
@@ -26,28 +54,28 @@
 <ul class="nav">
 <li class="divider-vertical"></li>
 <li class="active">
-<a href="http://versemarkt.nl/">
+<a href="#/home">
 <i class="icon-home icon-white"></i>
 Home
 </a>
 </li>
 <li class="divider-vertical"></li>
 <li class="active">
-<a href="versemarkt/koop.html">
+<a href="#/koop">
 <i class="icon-shopping-cart icon-white"></i>
 Koop
 </a>
 </li>
 <li class="divider-vertical"></li>
 <li class="active">
-<a href="versemarkt/verkoop.html">
+<a href="#/verkoop">
 <i class="icon-money icon-white"></i>
 Verkoop
 </a>
 </li>
 <li class="divider-vertical"></li>
 <li class="active">
-<a href="versemarkt/kweek.html">
+<a href="#/kweek">
 <i class="icon-leaf icon-white"></i>
 Kweek
 </a>
@@ -60,8 +88,12 @@ Kweek
 <input class="search-query" type="text" placeholder="opzoek naar iets vers?" name="as_q">
 <input type="hidden" value="versemarkt.nl" name="as_sitesearch">
 </form>
-
+<ul>
+    <li ng-show-auth="['logout','error']"><a href="#/login">login</a></li>
+    <li ng-show-auth="'login'"><a href="#/account">account</a></li>
+    </ul>
 </div>
+    
 </div>
 </div>
 </header>
@@ -76,21 +108,12 @@ Verse Markt
     
 <!-- Panel Main Content -->
     
-<div class="panel">
-   
-<h3>
-    verse producten
-    <span class="label label-default" ng-hide="countVisibleItems() ==0">{{countVisibleItems()}}</span>
-</h3>
-    <div class="home-search">
-    <h4><label><input type="text" class="form-control" ng-model="priceItem" >Hoe veel heb je voor je {{vm.item.random}} betaald?</label></h4>
     
+    
+<div class="panel">
+ 
+<div ng-view></div>    
 
-<button class="btn btn-home" ng-click="searchItemsWithinPriceItem"(priceItem, locationItem, locationUser)>Spaar</button>
-</div>
-  
-</div>
-<br />
     
 <!-- Footer -->
     

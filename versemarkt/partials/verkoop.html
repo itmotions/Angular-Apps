@@ -1,0 +1,54 @@
+<!-- Panel Main Content -->
+    
+<div class="panel panel-sell">
+    <h3>
+    {{my.user}}'s verse producten
+    <span class="label label-default" ng-hide="countVisibleProducts() ==0">{{countVisibleProducts()}}</span>
+</h3>
+<div class="input-group">
+<!--<input class="form-control" />-->
+    <label><input type="text" class="form-control" ng-model="newProduct" >Naam</label>
+    
+    <label><input type="number" class="form-control" ng-model="qty" >Kg</label>
+    
+    <label><input type="number" class="form-control" ng-model="kgprice" >Prijs per Kg</label>
+    
+     <label><input type="file" class="form-control" ng-model="picNewItem" >Foto</label>
+    
+<span class="input-group-btn">
+<button class="btn btn-default" ng-click="addProduct(newProduct, qty, kgprice)">Add</button>
+</span>
+</div>
+    <br />
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Verse</th>
+<th>Kg</th>
+<th>Prijs</th>
+<th>Foto</th>
+<th>Verberg</th>
+</tr>
+</thead>
+<tbody>
+    <tr ng-repeat="(key, product) in products">
+        <td>{{product.name}}</td>
+        <td>{{product.qty}}</td>
+        <td>{{calculatePrice(product.qty, product.kgprice)}}</td>
+        <td>{{product.pic}}</td>
+        <td>
+            <input type="checkbox" ng-click="hideProduct(key)" />
+        </td>
+    </tr>
+</tbody>
+</table>
+    <div class="checkbox-inline">
+    <label><input type="checkbox" ng-model="showHidden"> Toon verborgen producten </label>
+        <span class="label label-default" ng-hide="countHiddenProducts() ==0">{{countHiddenProducts()}}</span>
+    </div>
+    <span>
+    <button class="btn btn-sell" ng-click="searchProductsWithinPriceInput"(priceProduct, locationProduct, locationUser)>Verkoop</button>
+        </span>
+</div>
+ </div>      
+<br />    
