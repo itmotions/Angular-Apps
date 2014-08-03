@@ -5,21 +5,55 @@
     {{my.user}}'s verse producten
     <span class="label label-default" ng-hide="countVisibleProducts() ==0">{{countVisibleProducts()}}</span>
 </h3>
-<div class="input-group">
-<!--<input class="form-control" />-->
-    <label><input type="text" class="form-control" ng-model="newProduct" >Naam</label>
+<div class="form-center"
+<div class="col-12"
+<form id="add_product_form" action="/s">
+
+    <div class="name-product-wrapper">
+        <input type="file" class="add-image form-inline" ng-model="picNewItem" placeholder="Foto"> </input>
+        <input id="name_product" class="form-inline name-product input-large input-contrast" type="text" placeholder="Wat zou je graag verkopen?" name="name-product" autocomplete="on"></input>
+        <p id="enter_product_error_message" class="bad hide">Please enter a product</p>
+    </div>
+    <input id="qty" class="form-inline qty-kgprice search-option input-large input-contrast ui-datepicker-target" type="text" placeholder="Kg" name="qty"></input>
+    <input id="kgprice" class="form-inline qty-kgprice search-option input-large input-contrast ui-datepicker-target" type="text" placeholder="Kg prijs" name="checkout"></input>
+    <div class="select select-large">
+        <select id="category" name="categories">
+            <option value="1">
+                Groenten
+            </option>
+            <option value="2">
+                Fruit
+            </option>
+            <option value="3">
+                Vis
+            </option>
+            <option value="4">
+                Delicatessen
+            </option>
+        </select>
+    </div>
+    <input type="hidden" value="bb" name="source"></input>
+    <button id="add_product" class="btn-add form-inline btn" type="submit" ng-click="addProduct(newProduct, qty, kgprice)">Verkoop</button>
+
+</form>
+</div>
+</div>
     
-    <label><input type="number" class="form-control" ng-model="qty" >Kg</label>
-    
-    <label><input type="number" class="form-control" ng-model="kgprice" >Prijs per Kg</label>
-    
-     <label><input type="file" class="form-control" ng-model="picNewItem" >Foto</label>
-    
+<!--  
+<div class="input-group form-inline">
+<!--<input class="form-control" />
+    <input type="text" class="add-pname form-inline input-large" ng-model="newProduct" placeholder="Naam"> </input>
+    <input type="number" class="qty-kgprice form-inline input-large" ng-model="qty" placeholder="Kg"> </input>
+    <input type="number" class="qty-kgprice form-inline input-large" ng-model="kgprice" placeholder="Prijs per Kg"> </input>
+    <input type="file" class="add-image form-inline" ng-model="picNewItem" placeholder="Foto"> </input>
 <span class="input-group-btn">
-<button class="btn btn-default" ng-click="addProduct(newProduct, qty, kgprice)">Add</button>
+<button class="btn btn-add" ng-click="addProduct(newProduct, qty, kgprice)">Add</button>
 </span>
 </div>
+-->
     <br />
+    <br />
+<div>
 <table class="table table-striped">
 <thead>
 <tr>
@@ -46,9 +80,4 @@
     <label><input type="checkbox" ng-model="showHidden"> Toon verborgen producten </label>
         <span class="label label-default" ng-hide="countHiddenProducts() ==0">{{countHiddenProducts()}}</span>
     </div>
-    <span>
-    <button class="btn btn-sell" ng-click="searchProductsWithinPriceInput"(priceProduct, locationProduct, locationUser)>Verkoop</button>
-        </span>
 </div>
- </div>      
-<br />    
