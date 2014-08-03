@@ -1,48 +1,6 @@
- 
-<div class="panel panel-buy">
-    <h3>
-    Verkrijgbaar verse producten
-    <span class="label label-default" ng-hide="countVisibleItems() ==0">{{countVisibleItems()}}</span>
-</h3>
-<div class="input-group">
-<!--<input class="form-control" />-->
-    <label><input type="search" class="form-control" ng-model="nameNewItem" >waar heb je trek in vandag?</label>
-    
-<!--    <input type="file" class="form-control" ng-model="picNewItem" />-->
-
-<span>
-    <button class="btn btn-sell" ng-click="searchItemsWithinPriceItem"(priceItem, locationItem, locationUser)>Zoek</button>
-        </span>
+<h3>Zin in?</h3>
+<div class="koop-search">
+    <h4><label><input type="text" class="form-control" ng-model="sProduct" >Waar heb je zin in?</label></h4>
+    <button class="btn btn-search" ng-click="searchProducts"(sProduct)>Zoek</button>
+</div> 
 </div>
-    <br />
-<table class="table table-striped">
-<thead>
-<tr>
-<th>Verse</th>
-<th>Aantal</th>
-<th>Prijs</th>
-<th>Foto</th>
-<th>In 't maatje</th>
-</tr>
-</thead>
-<tbody>
-    <tr ng-repeat="item in vm.items | hiddenItems:showHidden | orderBy:'name'">
-        <td>{{item.name}}</td>
-        <td>{{item.qty}}</td>
-        <td>{{calculatePrice(item.qty, item.kgprice)}}</td>
-        <td>{{item.pic}}</td>
-        <td>
-            <input type="checkbox" ng-model="item.hide" />
-        </td>
-    </tr>
-</tbody>
-</table>
-    <div class="checkbox-inline">
-    <label><input type="checkbox" ng-model="showHidden"> Toon verborgen producten </label>
-        <span class="label label-default" ng-hide="countHiddenItems() ==0">{{countHiddenItems()}}</span>
-    </div>
-    <span>
-    <button class="btn btn-sell" ng-click="searchItemsWithinPriceItem"(priceItem, locationItem, locationUser)>Koop</button>
-        </span>
-</div>
-<br />
