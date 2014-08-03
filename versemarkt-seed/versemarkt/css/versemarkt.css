@@ -42,13 +42,30 @@
     background-color: green;
     color: #fff;
     font-size: 1.5em;
-    margin-bottom: 8px;
+    padding: 9px 27px;
 }
 
 .btn-sell, .btn-buy {
     float: right;
     
 }
+
+.btn-add {
+    background-color: green;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 9px 27px;
+}
+
+/*
+.btn-add {
+    border-color: #FF5A5F #FF5A5F #E00007;
+    background-color: #FF5A5F;
+    color: #FFF;
+    padding: 9px 27px;
+    font-size: 16px;
+}
+*/
 
 .panel {
 padding-left: 8px;
@@ -98,11 +115,91 @@ body {
     padding-top: 8px;
 }
 
+/* add product form style */
+
+.col-12 {
+    width: 100%;
+}
+
+.form-center {
+    text-align: center;
+}
+
+.name-product-wrapper {
+    display: inline-block; 
+}
+
+#name_product {
+    width: 290px;
+    border-right: 0px;
+    border-radius: 0px;
+    border: 1px solid #DCE0E0;
+    background-color: #FFF;
+    color: #565A5C;
+}
+    
+.form-inline {
+    display: inline;
+    box-sizing: border-box;  
+}
+
+
+.input-large {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+input.add-image[type="file"] {
+    display: inline;
+}
+
+.qty-kgprice {
+    width: 130px;
+    border-right: 0px;
+    border-radius: 0px;
+    border: 1px solid #DCE0E0;
+    background-color: #FFF;
+    color: #565A5C;
+}
+
+.add-image {
+    width: 190px;
+}
+
+.select-large {
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+.select {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    border-right: 0px;
+    border-radius: 0px;
+    border: 1px solid #DCE0E0;
+    background-color: #FFF;
+    color: #565A5C;
+}
+
+#category {
+  border: 0px;  
+}
+
+#add_product_form, #add_product {
+    height: 44px;
+    
+}
+
+/* end add product form style */
 
 ol, ul {
     display: inline-flex;
     list-style: none inside none;
 }
+
 li {
     padding-right: 8px;
 }
