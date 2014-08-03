@@ -31,13 +31,13 @@
 </tr>
 </thead>
 <tbody>
-    <tr ng-repeat="product in products | hiddenProducts:showHidden | orderBy:'name'">
+    <tr ng-repeat="(key, product) in products">
         <td>{{product.name}}</td>
         <td>{{product.qty}}</td>
         <td>{{calculatePrice(product.qty, product.kgprice)}}</td>
         <td>{{product.pic}}</td>
         <td>
-            <input type="checkbox" ng-model="poduct.hide" />
+            <input type="checkbox" ng-click="hideProduct(key)" />
         </td>
     </tr>
 </tbody>

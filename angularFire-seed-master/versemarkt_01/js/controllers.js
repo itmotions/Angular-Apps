@@ -1,102 +1,18 @@
+
+
 'use strict';
 
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-
    .controller('HomeCtrl', ['$scope', 'syncData', function($scope, syncData) {
       syncData('syncedValue').$bind($scope, 'syncedValue');
-       
-       $scope.countVisibleProducts = function () {
-        var countV = 0;
-        angular.forEach($scope.products, function (product) {
-            if (!product.hide) {countV++}
-        });
-        return countV;
-    }
-    
-    $scope.countHiddenProducts = function () {
-        var countH = 0;
-        angular.forEach($scope.products, function (product) {
-            if (product.hide) {countH++}
-    
-    });
-        return countH;
-    }
-       
    }])
 
-  .controller('ChatCtrl', ['$scope', 'syncData', function($scope, syncData) {
-      $scope.newMessage = null;
-      $scope.name = null;
 
-      // constrain number of messages by limit into syncData
-      // add the array into $scope.messages
-      $scope.messages = syncData('messages', 5);
 
-      // add new messages to the list
-      $scope.addMessage = function() {
-         if( $scope.newMessage && $scope.name) {
-            $scope.messages.$add({text: $scope.newMessage, name: $scope.name});
-            $scope.newMessage = null;
-            $scope.name = null;
-         }
-      };
-   }])
-
-      .controller('SellCtrl', ['$scope', 'syncData', function($scope, syncData) {
-      $scope.newProduct = null;
-      $scope.qty = null;
-      $scope.kgprice = null;
-      
-
-      // constrain number of products by limit into syncData
-      // add the array into $scope.products
-      $scope.products = syncData('products', 20);
-
-      // add new messages to the list
-      $scope.addProduct = function (newProduct, qty, kgprice, tprice) {
-         if( $scope.newProduct && $scope.qty && $scope.kgprice) {
-            $scope.products.$add({name: $scope.newProduct, qty: $scope.qty, kgprice: $scope.kgprice, tprice: calculateprice(qty, kgprice)});
-             
-           
-            $scope.newProduct = null;
-            $scope.qty = null;
-            $scope.kgprice = null;
-         }
-          
-          
-      };
-          
-          $scope.calculatePrice = function (fqty, fkgprice) {
-        var price = (fqty) * (fkgprice);
-        
-        return price;
-    }
-          
-    $scope.countVisibleProducts = function () {
-        var countV = 0;
-        angular.forEach($scope.products, function (product) {
-            if (!product.hide) {countV++}
-        });
-        return countV;
-    }
-    
-    $scope.countHiddenProducts = function () {
-        var countH = 0;
-        angular.forEach($scope.products, function (product) {
-            if (product.hide) {countH++}
-    
-    });
-        return countH;
-    }
-    
-    
-   }])
 
    .controller('LoginCtrl', ['$scope', 'loginService', '$location', function($scope, loginService, $location) {
-      $scope.sellerType = false;
-      $scope.buyerType = false; 
       $scope.email = null;
       $scope.pass = null;
       $scope.confirm = null;
@@ -130,7 +46,7 @@ angular.module('myApp.controllers', [])
                else {
                   // must be logged in before I can write to my profile
                   $scope.login(function() {
-                     loginService.createProfile(user.uid, user.email, user.buyerType, user.sellerType);
+                     loginService.createProfile(user.uid, user.email);
                      $location.path('/account');
                   });
                }
@@ -147,10 +63,6 @@ angular.module('myApp.controllers', [])
          }
          else if( $scope.pass !== $scope.confirm ) {
             $scope.err = 'Passwords do not match';
-         }
-          
-         else if( $scope.buyerType == false && $scope.sellerType == false ) {
-            $scope.err = 'Please select an account type';
          }
          return !$scope.err;
       }
@@ -234,3 +146,64 @@ angular.module('myApp.controllers', [])
       }
 
    }]);
+
+/* .controller('SellCtrl', ['$scope', 'syncData', function($scope, syncData) {
+      $scope.newProduct = null;
+      $scope.qty = null;
+      $scope.kgprice = null;
+      
+
+      // constrain number of products by limit into syncData
+      // add the array into $scope.products
+      $scope.products = syncData('products', 20);
+
+      // add new messages to the list
+      $scope.addProduct = function (newProduct, qty, kgprice, tprice) {
+         if( $scope.newProduct && $scope.qty && $scope.kgprice) {
+            $scope.products.$add({name: $scope.newProduct, qty: $scope.qty, kgprice: $scope.kgprice, tprice: $scope.calculatePrice(qty, kgprice)});
+             
+           
+            $scope.newProduct = null;
+            $scope.qty = null;
+            $scope.kgprice = null;
+         }
+          
+          
+      }
+          
+       $scope.hideProduct = function (key) {
+       $scope.products[key].hide = 1;
+         $scope.products.$save() ;   
+           
+            
+         }
+          
+          $scope.calculatePrice = function (fqty, fkgprice) {
+        var price = (fqty) * (fkgprice);
+        console.log('quantita: ' + fqty);
+        return price;
+    };
+     
+    
+    $scope.countVisibleProducts = function () {
+    
+        var countV = 0;
+        angular.forEach($scope.products, function (product) {
+            if (product.tprice) {
+                console.log(product);
+               // !product.hide) {countV++}
+        }});
+        return countV;
+    };
+    
+    $scope.countHiddenProducts = function () {
+        var countH = 0;
+        angular.forEach($scope.products, function (product) {
+            if (product.hide) {countH++}
+    
+    });
+        return countH;
+    }
+    
+    
+   }]) */ 
