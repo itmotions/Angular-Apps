@@ -6,33 +6,33 @@ angular.module('myApp.routes', ['ngRoute'])
    // which should only be available while logged in
    .config(['$routeProvider', function($routeProvider) {
       $routeProvider.when('/home', {
-         templateUrl: 'partials/home.html',
+         templateUrl: 'versemarkt/partials/home.html',
          controller: 'HomeCtrl'
       });
 
       $routeProvider.when('/koop', {
-         templateUrl: 'partials/koop.html',
+         templateUrl: 'versemarkt/partials/koop.html',
          controller: 'BuyCtrl'
       });
        
       $routeProvider.when('/verkoop', {
-         templateUrl: 'partials/verkoop.html',
+         templateUrl: 'versemarkt/partials/verkoop.html',
          controller: 'SellCtrl'
       });
        
       $routeProvider.when('/kweek', {
-         templateUrl: 'partials/kweek.html',
+         templateUrl: 'versemarkt/partials/kweek.html',
          controller: 'ChatCtrl'
       });
 
       $routeProvider.when('/account', {
          authRequired: true, // must authenticate before viewing this page
-         templateUrl: 'partials/account.html',
+         templateUrl: 'versemarkt/partials/account.html',
          controller: 'AccountCtrl'
       });
 
       $routeProvider.when('/login', {
-         templateUrl: 'partials/login.html',
+         templateUrl: 'versemarkt/partials/login.html',
          controller: 'LoginCtrl'
       });
 
