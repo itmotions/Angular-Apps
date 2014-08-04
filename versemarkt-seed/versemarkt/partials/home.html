@@ -6,7 +6,6 @@
     <span class="label label-default" ng-hide="countVisibleProducts() ==0">{{countVisibleProducts()}}</span>
 </h3>
 <div class="home-search">
-    <h4><label><input type="text" class="form-control" ng-model="priceProducts" >Hoe veel heb je voor je verse producten betaald?</label>
-    </h4>
-<button class="btn btn-home" ng-click="searchProductsWithinPriceProducts"(priceProducts, locationProducts, locationUser)>Spaar</button>
+    <input type="text" class="main-control" ng-model="priceProducts" placeholder="Hoe veel heb je voor je verse producten betaald?" ></input>
+<button class="btn btn-search" ng-click="searchProductsWithinPriceProducts"(priceProducts, locationProducts, locationUser)>Spaar</button>
 </div>
