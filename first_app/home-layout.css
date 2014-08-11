@@ -18,16 +18,6 @@ body {
 
 .block {
   float: left;
-  display: inline;
-}
-
-.clear {
-  clear: both;
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
-  height: 0;
 }
 
 ul {
@@ -42,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
   font-size: 5em;
-  color: #00B0B9;
+  color: #F38630;
   font-weight: 600;
   line-height: 68px;
   margin-bottom: 29px;
@@ -56,13 +46,13 @@ h3 {
 }
 
 p.bold {
-  font-size: 30px;
+  font-size: 2.5em;
   line-height: 36px;
   margin-bottom: 15px;
 }
 
 p {
-  font-size: 18px;
+  font-size: 1.8em;
   line-height: 26px;
   margin-top: 0;
 }
@@ -75,7 +65,7 @@ p {
 /* Top header */
 
 div#header-container {
-  background-color: #00B0B9;
+  background-color: #222;
   z-index: 1;
 }
 
@@ -103,7 +93,7 @@ ul#top-menu li a {
 }
 
 ul#top-menu li a:hover {
-  color: #000;
+  color: #ccc;
   text-decoration: none;
   border-bottom: 1px solid #000;
 }
@@ -114,10 +104,25 @@ div#top-logo {
   padding-top: 33px;
 }
 
+.btn-search {
+    background-color: green;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 9px 27px;
+    height: 44px;
+}
+
+.btn-add {
+    background-color: green;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 9px 27px;
+}
+
 /* Title */
 
 div#title-container {
-  background: #129FA6 url('images/haagsemarkt-background.jpg') no-repeat fixed center top;
+  background: #A7DBD8 url('images/haagsemarkt-background.jpg') no-repeat fixed center top;
 }
 
 section#title {
@@ -229,7 +234,7 @@ div#intro-text {
 /* Koop */
 
 div#koop-container {
-  background: #EBEBEB url('images/new-background.jpg') no-repeat fixed right;
+  background: #EBEBEB url('images/koop-background.jpg') no-repeat fixed right;
   z-index: 2;
   overflow: hidden;
 }
@@ -244,6 +249,9 @@ section#koop {
 div#koop-text {
   width: 520px;
   padding-top: 75px;
+  padding-left: 10px;
+  background: #EBEBEB;
+  opacity: 0.6;
 }
 
 p#koop-bold {
@@ -252,6 +260,10 @@ p#koop-bold {
 
 p#koop-body {
   width: 360px;
+}
+
+.koop-search {
+    width: 170px;
 }
 
 /* Verkoop */
@@ -272,10 +284,82 @@ div#verkoop-text {
   padding-top: 100px;
 }
 
+.form-center {
+    text-align: center;
+}
+
+.name-product-wrapper {
+    display: inline-block; 
+}
+
+#name_product {
+    width: 290px;
+    border-right: 0px;
+    border-radius: 0px;
+    border: 1px solid #DCE0E0;
+    background-color: #FFF;
+    color: #565A5C;
+}
+    
+.form-inline {
+    display: inline;
+    box-sizing: border-box;  
+}
+
+
+.input-large {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.2em;
+}
+
+input.add-image[type="file"] {
+    display: inline;
+}
+
+.qty-kgprice {
+    width: 130px;
+    border-right: 0px;
+    border-radius: 0px;
+    border: 1px solid #DCE0E0;
+    background-color: #FFF;
+    color: #565A5C;
+}
+
+.add-image {
+    width: 190px;
+}
+
+.select-large {
+    font-size: 1.2em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+.select {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    border-right: 0px;
+    border-radius: 0px;
+    border: 1px solid #DCE0E0;
+    background-color: #FFF;
+    color: #565A5C;
+}
+
+#category {
+  border: 0px;  
+}
+
+#add_product_form, #add_product {
+    height: 44px;
+    
+}
+
 /* Laatste Producten */
 
 div#lproduct-container {
-  background-color: #EBEBEB;
+  background-color: #E0E4CC;
 }
 
 section#lproduct {
@@ -298,60 +382,25 @@ p#lproduct-body {
 
 div#team-top-container {
   background: #222;
+  padding-bottom: 30px;
   
 }
 
-div#team-heading-2 {
+div#team-heading {
   padding-top: 60px;
 }
 
-section#team-2 {
-  width: 1050px;
-  height: 500px;
-  margin: 0 auto;
-  padding: 0;
-}
-
-section#team-2 h2 {
+section#team h2 {
   color: #FFF;
 }
 
-section#team-2 h3, div#team-davide-2 p, div#team-federico-2 p, div#team-maurizio-2  {
-  color: #000;
-}
-
-div#team-davide-2 {
-  width: 30%;
-  padding-top: 63px;
-}
-
-div#team-federico-2 {
-  width: 30%;
-  padding-top: 63px;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-div#team-maurizio-2 {
-  width: 30%;
-  padding-top: 63px;
-}
-
 .headshot {
-  width: 90%;
-  height: auto;
-}
-
-div#team-bottom-container {
-  height: 500px;
-  background-color: #00B0B9;
-  background: rgb(0, 176, 185);
-  background: rgba(0, 176, 185, 0.9);
-  
+  border-radius: 200px;
 }
 
 section#team {
   width: 1050px;
+  height: 500px;
   margin: 0 auto;
   padding: 0;
 }
@@ -360,27 +409,14 @@ section#team h2, section#team h3, div#team-davide p, div#team-federico p, div#te
   color: #FFF;
 }
 
-div#team-heading {
-  display: none;
-  width: 10%;
-  padding-top: 60px;
-}
-
-div#team-davide {
+div#team-davide, div#team-maurizio {
   width: 30%;
-  padding-top: 63px;
 }
 
 div#team-federico {
   width: 30%;
-  padding-top: 63px;
   padding-left: 5%;
   padding-right: 5%;
-}
-
-div#team-maurizio {
-  width: 30%;
-  padding-top: 63px;
 }
 
 p.team-title {
@@ -392,7 +428,6 @@ p.team-title {
 /* Contact */
 
 div#contact-container {
-  position: inline;
   background: url('images/contact-background.jpg') no-repeat fixed right;  
 }
 
@@ -412,41 +447,19 @@ section#contact a:hover {
   text-decoration: underline;
 }
 
-div#contact-deets {
-  font-size: 18px;
-  line-height: 26px;
-  margin-bottom: 60px; 
-}
-
-div#contact-deets ul {
-  padding-left: 20px;
-}
-
-div#contact-deets li {
-  list-style-type: circle;
-}
-
 div#contact-heading {
   width: 360px;
-}
-
-div#contact-address, div#contact-info {
-  padding-top: 50px;
-}
-
-div#contact-address {
-  width: 185px;
+  margin-top: 100px;
 }
 
 div#contact-info {
-  width: 230px;
   padding-left: 60px;
 }
 
 /* Footer */
 
 div#footer-container {
-  background-color: #000;
+  background-color: #222;
 }
 
 footer#footer {
@@ -475,62 +488,5 @@ div#footer-logo {
 }
 
 #footer a:hover {
-  color: #00B0B9;
+  color: #ccc;
 }
-
-/* Mobile Menu Header */
-/*
-div#header-container-mobile {
-  display: none;
-  width: 100%;
-  background-color: #00B0B9;
-  z-index: 777;
-  position: fixed;
-}
-
-header#header-mobile {
-  height: 50px;
-}
-
-div#header-mobile-logo {
-  position: relative;
-  top: 15px;
-}
-
-div#header-mobile-logo img {
-  width: 110px;
-  margin-left: 10px;
-}
-
-span.header-mobile-link {
-  position: relative;
-  top: -6px;
-  left: 15px;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-header#header-mobile a {
-  color: #FFF;
-  text-decoration: none;
-}
-
-header#header-mobile a:hover {
-  color: #000;
-  text-decoration: underline;
-}
-
-div#header-mobile-section {
-  float: right;
-  text-align: right;
-}
-
-div#header-mobile-section span {
-  position: relative;
-  top: 15px;
-  font-size: 14px;
-  color: #FFF;
-  text-transform: uppercase;
-  margin-right: 25px;
-}
-*/

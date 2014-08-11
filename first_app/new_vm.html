@@ -28,20 +28,18 @@
       </div>
     </header>
   </div>
-  <div class="clear"></div>
   
     
     <!-- Main Title -->
   <div id="title-container" class="container">
     <section id="title">
       <h1 id="title-text">Verse <span class="white">Markt</span></h1>
-      <h2 id="subtitle-text">V0.1 <span class="red">trotstomaat</span></h2>
+      <h2 id="subtitle-text"><span class="white">v0.1</span> <span class="red">trotstomaat</span></h2>
       <div id="title-arrow">
         <a class="no-offset not-mobile" href="#intro"><img src="images/down-arrow.png" alt="Down arrow"></a>
       </div>
     </section>
   </div>
-  <div class="clear"></div>
 
     
    <!-- Floating Navigation needs JS
@@ -69,15 +67,14 @@
       <div id="intro-text" class="block">
         <h2>Al weer?</h2>
         <div class="home-search">
-    <input type="text" class="main-control" ng-model="priceProducts" placeholder="Hoe veel heb je deze week voor je verse producten betaald?" ></input>
+    <input type="text" class="input-large" ng-model="priceProducts" placeholder="Hoe veel heb je deze week voor je verse producten betaald?" ></input>
 <button class="btn btn-search" ng-click="searchProductsWithinPriceProducts"(priceProducts, locationProducts, locationUser)>Spaar</button>
         </div>
-        <p class="bold">Kies voor vers, kies voor de markt!</p>
+        <p class="bold">met de zelfde oude man? kies eens voor vers, kies voor de markt!</p>
         <p>Tortor faucibus ullamcorper nec tempus purus sed penatibus. Lacinia pellentesque eleifend vitae est elit tristique velit tempus etiam.</p>
       </div>
     </section>
   </div>
-  <div class="clear"></div>
     
     
   <!-- Buy view -->  
@@ -85,17 +82,13 @@
     <section id="koop">
       <div id="koop-text" class="block"> 
         <h2>Zin in?</h2>
-          <div class="koop-search">
-    <input type="text" class="main-control" ng-model="sProduct" placeholder="Waar heb je zin in?"></input>
-    <button class="btn btn-search" ng-click="searchProducts"(sProduct)>Zoek</button>
-</div> 
-        <p id="koop-bold" class="bold">Wat kook jij vanavond?</p>
+    <input type="text" class="koop-search input-large" ng-model="sProduct" placeholder="Waar heb je zin in?"></input>
+    <button class="btn btn-search" ng-click="searchProducts"(sProduct)>Zoek</button> 
+        <p id="koop-bold" class="bold">wat kook jij vanavond?</p>
         <p id="koop-body">Rhoncus mattis egestas sed fusce sodales rutrum et etiam ullamcorper. Etiam egestas scelerisque ac duis magna lorem ipsum dolor.</p>
       </div>
-
     </section>
   </div>
-  <div class="clear"></div>
 
     
   <!-- Sell view -->
@@ -133,7 +126,7 @@
     <button id="add_product" class="btn-add form-inline btn" type="submit" ng-click="addProduct(newProduct, qty, kgprice)">Verkoop</button>
 </form>
 </div>
-        <p id="verkoop-bold" class="bold">Houd je klanten net zo dichtbij als een click</p>
+        <p id="verkoop-bold" class="bold">je klanten zijn zo ver weg als een tik</p>
         <p id="verkoop-body">Tortor faucibus ullamcorper nec tempus purus sed penatibus. Lacinia pellentesque eleifend vitae est elit tristique velit tempus etiam.</p>
       </div>
     </section>
@@ -146,82 +139,51 @@
     <section id="lproduct">
       <div id="lproduct-text" class="block">
         <h2>Kijk naar ons aanbod</h2>
-        <p class="bold">Altijd verste, altijd goedkopste</p>
+        <p class="bold">Altijd vers, altijd lekkers</p>
         <p>Rhoncus mattis egestas sed fusce sodales rutrum et etiam ullamcorper. Etiam egestas scelerisque ac duis magna lorem ipsum dolor.</p>
       </div>
     </section>
   </div>
-  <div class="clear"></div>
 
     <!-- Chiefs view -->
   <div id="team-top-container" class="container">
-      <section id="team-2">
-        <div id="team-details">
-          <div id="team-heading-2">
+      <section id="team">
+          <div id="team-heading">
             <h2>The Chiefs</h2>
           </div>
-          <div id="team-davide-2" class="block">
-            <img class="headshot" src="images/davide.png">
-          </div>
-          <div id="team-federico-2" class="block">
-            <img class="headshot" src="images/federco.png">
-          </div>
-          <div id="team-maurizio-2" class="block">
-            <img class="headshot" src="images/maurizio.png">
-          </div>
+          <div id="team-davide" class="block">
+            <img class="headshot" src="images/davide.jpg">
+          <h3>Davide Lucchesi</h3>
+          <p class="team-title">Technology Wizard</p>
+        </div>
+          <div id="team-federico" class="block">
+            <img class="headshot" src="images/federico.jpg">
+              <h3>Federico Fantini</h3>
+          <p class="team-title">Executive Ninja</p>
+        </div>
+          <div id="team-maurizio" class="block">
+            <img class="headshot" src="images/maurizio.jpg">
+          <h3>Maurizio Bricola</h3>
+          <p class="team-title">Creative Dreamer</p>
         </div>
       </section>
   </div>
-  <div class="clear"></div>
-
-    
-    <!-- Chiefs Bio view -->
-  <div id="team-bottom-container" class="container"> 
-    <section id="team">
-      <div id="team-details">
-        <div id="team-heading" class="block">
-          <h2>The Chiefs</h2>
-        </div>
-        <div id="team-davide" class="block">
-          <h3>Davide Lucchesi</h3>
-          <p class="team-title">Chief Technology Officer</p>
-          <p>lalalalala lalalalala lalalalala</p>
-        </div>
-        <div id="team-federico" class="block">
-          <h3>Federico Fantini</h3>
-          <p class="team-title">Chief Executive Officer</p>
-          <p>lalalalala lalalalala lalalalala</p>
-        </div>
-        <div id="team-maurizio" class="block">
-          <h3>Maurizio Bricola</h3>
-          <p class="team-title">Chief Creative Officer</p>
-          <p>lalalalala lalalalala lalalalala</p>
-        </div>
-      </div>
-    </section>
-  </div>
-  <div class="clear"></div>
 
     
     <!-- Contact view -->
   <div id="contact-container" class="container">    
     <section id="contact">
-      <div id="contact-text" class="block">
-        <div id="contact-deets">
-        </div>
         <div id="contact-heading">
           <h2>Meer weten?</h2>
         </div>
-        <div id="contact-address" class="block">
+        <div id="contact-text" class="block">
           <p>Neem contact met ons:</p>
         </div>
         <div id="contact-info" class="block">
-          <p>E. <a href="mailto:inof@versemarkt.nl">info@versemarkt.nl</a> <br>M. <a href="tel:0123456789">0123456789</a> <br><a href="https://www.facebook.com/versemarkt">Facebook</a></p>
+          <p><a href="mailto:inof@versemarkt.nl">info@versemarkt.nl</a> <br>M. <a href="tel:0123456789">0123456789</a> <br><a href="https://www.facebook.com/versemarkt">Facebook</a></p>
         </div>
-      </div>
     </section>
   </div>
-  <div class="clear"></div>
 
     
     <!-- Footer container -->
@@ -238,7 +200,6 @@
     </footer>
   </div>
 
-   
   
 </body>
 </html>
