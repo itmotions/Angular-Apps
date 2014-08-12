@@ -9,15 +9,21 @@ body {
   font-family: "proxima-nova", arial, sans-serif;
 }
 
+.clear {
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+}
+
 .container {
   position: relative;
   width: 100%;
   margin: 0;
   padding: 0;
-}
-
-.block {
-  float: left;
+  overflow: hidden;
 }
 
 ul {
@@ -57,10 +63,6 @@ p {
   margin-top: 0;
 }
 
-.not-mobile {
-  display: block;
-}
-
 
 /* Top header */
 
@@ -70,9 +72,8 @@ div#header-container {
 }
 
 header#top-header {
-  width: 1050px;
+  text-align: center;
   height: 100px;
-  margin: 0 auto;
   padding: 0;
 }
 
@@ -98,37 +99,24 @@ ul#top-menu li a:hover {
   border-bottom: 1px solid #000;
 }
 
-div#top-logo {
-  width: 200px;
-  text-align: right;
-  padding-top: 33px;
-}
 
-.btn-search {
+.btn-search, .btn-add {
     background-color: green;
     color: #fff;
     font-size: 1.5em;
-    padding: 9px 27px;
-    height: 44px;
+    padding-bottom: 7px;
+    padding-top: 7px;
 }
 
-.btn-add {
-    background-color: green;
-    color: #fff;
-    font-size: 1.5em;
-    padding: 9px 27px;
-}
 
 /* Title */
 
 div#title-container {
-  background: #A7DBD8 url('images/haagsemarkt-background.jpg') no-repeat fixed center top;
+  background: #E0E4CC url('images/haagsemarkt-background.jpg') no-repeat fixed center top;
 }
 
 section#title {
-  width: 1050px;
   height: 750px;
-  margin: 0 auto;
   padding: 0;
   text-align: center;
 }
@@ -151,137 +139,70 @@ div#title-arrow {
   padding-top: 33px;
 }
 
-/* Second menu (Floating Navigation bar needs JS) */
-/*
-.fixed {
-  position: fixed;
-  top: 0;
-}
-
-div#second-menu-container {
-  background-color: #00B0B9;
-  z-index: 666;
-  display: none;
-}
-
-section#second-menu {
-  width: 1050px;
-  height: 50px;
-  margin: 0 auto;
-  padding: 0;
-}
-
-ul#menu {
-  width: 860px;
-  padding-top: 15px;
-}
-
-ul#menu li {
-  display: inline;
-  font-size: 16px;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-right: 30px;
-}
-
-ul#menu li a {
-  color: #FFF;
-  text-decoration: none;
-}
-
-ul#menu li a:hover {
-  color: #000 !important;
-  text-decoration: none;
-}
-
-ul#menu li a.koop {
-  color: #FFF;
-  text-decoration: none;
-  border-bottom: 1px solid #FFF;
-}
-
-ul#menu li a:hover.home {
-  border-bottom: 1px solid #000;
-}
-
-div#menu-logo {
-  width: 190px;
-  text-align: right;
-  padding-top: 15px;
-} 
-*/
-
 /* Intro */
 
 div#intro-container {
+    background: url('images/tomaat.jpg') no-repeat 40% 50%;
+    padding-top: 100px;
 }
 
 section#intro {
-  background: url('images/tomaat.jpg') no-repeat 100px 150px;
-  width: 1050px;
-  height: 400px;
-  margin: 0 auto;
-  padding: 0;
-
+    margin-left: 50%;
+    text-align: left;
 }
 
+.intro-input {
+    width:45%;
+}
+
+
 div#intro-text {
-  width: 610px;
-  padding-top: 75px;
-  padding-left: 500px;
+  padding-top: 25px;
+  width: 60%;
+    
 }
 
 /* Koop */
 
 div#koop-container {
-  background: #EBEBEB url('images/koop-background.jpg') no-repeat fixed right;
-  z-index: 2;
-  overflow: hidden;
+  background: #EBEBEB url('images/koop-background.jpg') no-repeat fixed center;
+  margin-top:  100px;
+  margin-bottom: 100px;
+  overflow: visible;
 }
 
 section#koop {
-  width: 1050px;
-  height: 400px;
-  margin: 0 auto;
-  padding: 0;
+  margin-left: 25%;
+  height: 100%;
 }
 
 div#koop-text {
-  width: 520px;
-  padding-top: 75px;
-  padding-left: 10px;
+  width: 32%;
+  padding-left: 50px;
   background: #EBEBEB;
-  opacity: 0.6;
-}
-
-p#koop-bold {
-  width: 360px;
+  opacity: 0.65;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
 p#koop-body {
-  width: 360px;
+  width: 80%;
 }
 
 .koop-search {
-    width: 170px;
+    width: 50%;
 }
 
 /* Verkoop */
 
 div#verkoop-container {
+    padding-top: 100px;
     
 }
 
 section#verkoop {
-  width: 1050px;
-  height: 500px;
-  margin: 0 auto;
-  padding: 0;
-}
-
-div#verkoop-text {
-  
-  padding-top: 100px;
+  text-align: center;
+  margin-bottom: 100px;
 }
 
 .form-center {
@@ -351,43 +272,36 @@ input.add-image[type="file"] {
   border: 0px;  
 }
 
-#add_product_form, #add_product {
-    height: 44px;
-    
+div#verkoop-text {
+  margin-top: 50px;
 }
 
 /* Laatste Producten */
 
 div#lproduct-container {
-  background-color: #E0E4CC;
-}
-
-section#lproduct {
-  width: 1050px;
-  height: 800px;
-  margin: 0 auto;
-  padding: 0;
-}
-
-div#lproduct-text {
-  width: 550px;
+  background-color: #A7DBD8;
   padding-top: 100px;
 }
 
+section#lproduct {
+  height: 800px;
+}
+
+div#lproduct-text {
+
+}
+
 p#lproduct-body {
-  width: 430px;
+
 }
 
 /* Team */
 
 div#team-top-container {
   background: #222;
-  padding-bottom: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   
-}
-
-div#team-heading {
-  padding-top: 60px;
 }
 
 section#team h2 {
@@ -399,10 +313,11 @@ section#team h2 {
 }
 
 section#team {
-  width: 1050px;
-  height: 500px;
-  margin: 0 auto;
-  padding: 0;
+text-align: center;
+}
+
+div#team-members {
+    display: inline-flex;
 }
 
 section#team h2, section#team h3, div#team-davide p, div#team-federico p, div#team-maurizio  {
@@ -428,14 +343,13 @@ p.team-title {
 /* Contact */
 
 div#contact-container {
-  background: url('images/contact-background.jpg') no-repeat fixed right;  
+  background: url('images/contact-background.jpg') no-repeat fixed bottom right;
+  padding-bottom: 100px;
 }
 
 section#contact {
-  width: 1050px;
-  height: 500px;
-  margin: 0 auto;
-  padding: 0;
+    margin-left: 22%;
+  
 }
 
 section#contact a {
@@ -453,7 +367,7 @@ div#contact-heading {
 }
 
 div#contact-info {
-  padding-left: 60px;
+  padding-left: 50px;
 }
 
 /* Footer */
@@ -463,26 +377,24 @@ div#footer-container {
 }
 
 footer#footer {
-  width: 1050px;
   height: 70px;
-  margin: 0 auto;
-  padding: 0;
 }
 
 div#footer-text {
-  width: 525px;
   font-size: 18px;
   color: #FFF;
   padding-top: 25px;
+  padding-left: 50px;
+  float: left;
 }
 
-div#footer-logo {
-  width: 525px;
-  text-align: right;
-  padding-top: 20px;
+div#back-top {
+    padding-top:25px;
+    padding-right: 100px;
 }
 
 #footer a {
+  float: right;
   color: #FFF;
   text-decoration: none;
 }

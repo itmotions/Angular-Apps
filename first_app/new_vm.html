@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <title>Verse &middot; Markt</title>
   <meta name="description" content="Verse Markt help u met uw verse producten, groenten, vlees, vis en fruit.">
-  <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="home-layout.css">
   <link rel="shortcut icon" href="versemarkt.ico">
 
@@ -23,9 +22,6 @@
         <li><a href="#team-top-container">Our Chiefs</a></li>
         <li><a href="#contact">Meer weten?</a></li>
       </ul>
-      <div id="top-logo" class="block">
-        <img style="width: auto; height: 35px;" src="images/top-header-logo.jpg" alt="Verse Markt">
-      </div>
     </header>
   </div>
   
@@ -36,46 +32,29 @@
       <h1 id="title-text">Verse <span class="white">Markt</span></h1>
       <h2 id="subtitle-text"><span class="white">v0.1</span> <span class="red">trotstomaat</span></h2>
       <div id="title-arrow">
-        <a class="no-offset not-mobile" href="#intro"><img src="images/down-arrow.png" alt="Down arrow"></a>
+        <a class="no-offset" href="#intro"><img src="images/down-arrow.png" alt="Down arrow"></a>
       </div>
     </section>
   </div>
-
-    
-   <!-- Floating Navigation needs JS
-  <div id="second-menu-container" class="container">
-    <section id="second-menu">
-      <ul id="menu" class="block">
-        <li id="menu-intro"><a href="#intro">Home</a></li>
-        <li id="menu-koop"><a href="#koop">Koop</a></li>
-        <li id="menu-verkoop"><a href="#verkoop">Verkoop</a></li>
-        <li id="menu-team"><a href="#team-top-container">Our Chiefs</a></li>
-        <li id="menu-contact"><a href="#contact">Contact Us</a></li>
-      </ul>
-      <div id="menu-logo" class="block">
-        <a href="#header-container"><img src="images/menu-logo.png" alt="Verse Markt"></a>
-      </div>
-    </section>
-  </div>
-  <div class="clear"></div>
-    -->    
 
     
     <!-- Intro view -->
   <div id="intro-container" class="container">
     <section id="intro">
-      <div id="intro-text" class="block">
+        
         <h2>Al weer?</h2>
-        <div class="home-search">
-    <input type="text" class="input-large" ng-model="priceProducts" placeholder="Hoe veel heb je deze week voor je verse producten betaald?" ></input>
+        <p class="bold">naar de supermarkt..</p>
+        <div class="spaar">
+    <input type="text" class="input-large intro-input" ng-model="priceProducts" placeholder="Hoe veel heb je voor je verse producten betaald?" ></input>
 <button class="btn btn-search" ng-click="searchProductsWithinPriceProducts"(priceProducts, locationProducts, locationUser)>Spaar</button>
         </div>
-        <p class="bold">met de zelfde oude man? kies eens voor vers, kies voor de markt!</p>
+       <div id="intro-text" class="block">
+           <p class="bold">kies eens voor vers, kies voor de markt!</p>
         <p>Tortor faucibus ullamcorper nec tempus purus sed penatibus. Lacinia pellentesque eleifend vitae est elit tristique velit tempus etiam.</p>
       </div>
     </section>
   </div>
-    
+  <div class="clear"></div> 
     
   <!-- Buy view -->  
   <div id="koop-container" class="container">
@@ -89,12 +68,11 @@
       </div>
     </section>
   </div>
-
+  <div class="clear"></div>
     
   <!-- Sell view -->
   <div id="verkopen-container" class="container">    
     <section id="verkoop">
-      <div id="verkoop-text" class="block">
         <h2>Verkoop je verse producten</h2>
 <div class="form-center">
 <form id="add_product_form" action="/s">
@@ -126,6 +104,7 @@
     <button id="add_product" class="btn-add form-inline btn" type="submit" ng-click="addProduct(newProduct, qty, kgprice)">Verkoop</button>
 </form>
 </div>
+    <div id="verkoop-text" class="block">
         <p id="verkoop-bold" class="bold">je klanten zijn zo ver weg als een tik</p>
         <p id="verkoop-body">Tortor faucibus ullamcorper nec tempus purus sed penatibus. Lacinia pellentesque eleifend vitae est elit tristique velit tempus etiam.</p>
       </div>
@@ -139,11 +118,13 @@
     <section id="lproduct">
       <div id="lproduct-text" class="block">
         <h2>Kijk naar ons aanbod</h2>
-        <p class="bold">Altijd vers, altijd lekkers</p>
+        <p class="bold">altijd vers, altijd lekkers</p>
         <p>Rhoncus mattis egestas sed fusce sodales rutrum et etiam ullamcorper. Etiam egestas scelerisque ac duis magna lorem ipsum dolor.</p>
       </div>
     </section>
   </div>
+  <div class="clear"></div>
+
 
     <!-- Chiefs view -->
   <div id="team-top-container" class="container">
@@ -151,6 +132,7 @@
           <div id="team-heading">
             <h2>The Chiefs</h2>
           </div>
+          <div id="team-members">
           <div id="team-davide" class="block">
             <img class="headshot" src="images/davide.jpg">
           <h3>Davide Lucchesi</h3>
@@ -166,8 +148,10 @@
           <h3>Maurizio Bricola</h3>
           <p class="team-title">Creative Dreamer</p>
         </div>
+        </div>
       </section>
   </div>
+  <div class="clear"></div>
 
     
     <!-- Contact view -->
@@ -189,14 +173,15 @@
     <!-- Footer container -->
   <div id="footer-container" class="container">    
     <footer id="footer">
-      <div id="footer-text" class="block">
+      <div id="footer-text">
         <span>&copy;2014 Verse Markt</span> &middot;
         <span><a href="/legal/websiteterms">Terms</a></span> &middot;
         <span><a href="/legal/privacypolicy">Privacy Policy</a></span>
-      </div>
-      <div id="footer-logo" class="block">
+        </div>
+      <div id="back-top">
         <a href="#header-container">^ Top ^</a>
       </div>
+      
     </footer>
   </div>
 
