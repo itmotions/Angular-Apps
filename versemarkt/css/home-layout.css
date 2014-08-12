@@ -112,7 +112,7 @@ ul#top-menu li a:hover {
 /* Title */
 
 div#title-container {
-  background: #E0E4CC url('images/haagsemarkt-background.jpg') no-repeat fixed center top;
+  background: #E0E4CC url('../images/haagsemarkt-background.jpg') no-repeat fixed center top;
 }
 
 section#title {
@@ -142,7 +142,7 @@ div#title-arrow {
 /* Intro */
 
 div#intro-container {
-    background: url('images/tomaat.jpg') no-repeat 40% 50%;
+    background: url('../images/tomaat.jpg') no-repeat 40% 50%;
     padding-top: 100px;
 }
 
@@ -165,7 +165,7 @@ div#intro-text {
 /* Koop */
 
 div#koop-container {
-  background: #EBEBEB url('images/koop-background.jpg') no-repeat fixed center;
+  background: #EBEBEB url('../images/koop-background.jpg') no-repeat fixed center;
   margin-top:  100px;
   margin-bottom: 100px;
   overflow: visible;
@@ -343,7 +343,7 @@ p.team-title {
 /* Contact */
 
 div#contact-container {
-  background: url('images/contact-background.jpg') no-repeat fixed bottom right;
+  background: url('../images/contact-background.jpg') no-repeat fixed bottom right;
   padding-bottom: 100px;
 }
 
