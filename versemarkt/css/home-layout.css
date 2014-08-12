@@ -386,15 +386,16 @@ div#footer-text {
   padding-top: 25px;
   padding-left: 50px;
   float: left;
+  display: inline;
 }
 
 div#back-top {
+    float: right;
     padding-top:25px;
     padding-right: 100px;
 }
 
 #footer a {
-  float: right;
   color: #FFF;
   text-decoration: none;
 }
