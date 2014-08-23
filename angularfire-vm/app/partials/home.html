@@ -1,0 +1,43 @@
+<!-- Home -->
+<header>
+	<div class="container">
+		<div class="intro-text">
+			<div class="intro-lead-in">
+				<span ng-show-auth>Welkom terug ({{user.uid}})</span>
+				<span ng-hide-auth>je bent niet <a class="a-home" href="#/login">ingelogd</a></span>
+			</div>
+			<div class="intro-heading">Welcome bij het markt bij je thuis.</div>
+			<a href="#/about" class="page-scroll btn btn-xl">Hoe het werkt</a>
+		</div>
+	</div>
+</header>
+
+ <!-- Intro view -->
+  <div id="intro-container" class="container">
+    <section id="intro">
+        
+        <h2 class="section-heading">Al weer?</h2>
+        <p class="bold">naar de supermarkt...</p>
+        <div class="spaar">
+    <input type="text" class="input-large intro-input" ng-model="priceProducts" placeholder="Hoe veel heb je voor je verse producten betaald?" ></input>
+<button class="btn btn-search" ng-click="searchProductsWithinPriceProducts"(priceProducts, locationProducts, locationUser)>Spaar</button>
+        </div>
+       <div id="intro-text" class="block">
+           <p class="bold">kies eens voor vers, kies voor de markt!</p>
+        <p>Tortor faucibus ullamcorper nec tempus purus sed penatibus. Lacinia pellentesque eleifend vitae est elit tristique velit tempus etiam.</p>
+      </div>
+    </section>
+  </div>
+  <div class="clear"></div> 
+
+ <!-- Main Title -->
+  <div id="title-container" class="container">
+    <section id="title">
+      <h1 id="title-text">Verse<span class="white">Markt</span></h1>
+      <h2 id="subtitle-text"><span class="white">v0.1</span> <span class="red">tro<span class="stripe">t</span>stomaat</span></h2>
+    </section>
+  </div>
+
+    
+   
+    

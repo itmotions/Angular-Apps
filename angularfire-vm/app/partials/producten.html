@@ -1,0 +1,46 @@
+<!-- Buy view -->  
+  <div id="koop-container" class="container">
+    <section id="koop">
+      <div id="koop-text" class="block"> 
+        <h2 class="section-heading">Zin in?</h2>
+    <input type="text" class="koop-search input-large" ng-model="sProduct" placeholder="wat kook jij vanavond?"></input>
+    <button class="btn btn-search" ng-click="searchProducts"(sProduct)>Zoek</button> 
+        <p id="koop-body">Waar heb je zin in? voer de naam van een verse product in en zie de beste aanbod die dicht bij jou in de buurt is.</p>
+      </div>
+    </section>
+  </div>
+  <div class="clear"></div>
+
+<section id="portfolio" class="bg-light-gray">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h1 class="section-heading">Verse producten</h1>
+				<h3 class="section-subheading text-muted">
+					Stel je eigen menu samen, selecteer je producten en geniet van de smaak van de markt! 20% van onse verse producten werden direct door de producenten verkocht, 60% werden in Nederland met liefde gemakt. 
+				</h3>
+			</div>
+		</div>
+
+		<div class="row" ng-repeat="(id, kind) in dishes">
+			<h2 class="section-subheading">{{ id }}</h2>
+			<div class="col-md-4 col-sm-6 portfolio-item" ng-repeat="dish in kind | filter: { pic: '.jpg' }">
+				<a href="#portfolioModal1" class="portfolio-link">
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
+							<i class="fa fa-plus fa-3x"></i>
+						</div>
+					</div>
+					<img ng-src="img/dishes/{{ dish.pic }}" class="img-responsive" alt="{{ dish.name }}">
+				</a>
+				<div class="portfolio-caption">
+					<h3>{{ dish.name }}</h3>
+					<p class="text-muted">{{ dish.text }}</p>
+					<h4>{{ dish.price }} &euro;</h4>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
