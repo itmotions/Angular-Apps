@@ -752,8 +752,8 @@ section#contact .text-danger {
 
 footer {
     text-align: center;
-    margin-top: 100%;
-    object-position: bottom;
+    margin-top: 99%;
+    position:absolute;
 }
 
 footer span.copyright {
