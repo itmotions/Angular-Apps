@@ -6,11 +6,11 @@
 <form id="add_product_form" action="/s">
     <div class="name-product-wrapper">
         <input type="file" class="add-image form-inline" ng-model="picNewItem" placeholder="Foto"> </input>
-        <input id="name_product" class="form-inline name-product input-large input-contrast" type="text" placeholder="Wat zou je graag verkopen?" name="name-product" autocomplete="on"></input>
+        <input id="name_product" class="form-inline name-product input-xl input-contrast" type="text" placeholder="Wat zou je graag verkopen?" name="name-product" autocomplete="on"></input>
     </div>
-    <input id="qty" class="form-inline qty-kgprice search-option input-large input-contrast" type="text" placeholder="Kg" name="qty"></input>
-    <input id="kgprice" class="form-inline qty-kgprice search-option input-large input-contrast" type="text" placeholder="Kg prijs" name="checkout"></input>
-    <div class="select select-large">
+    <input id="qty" class="form-inline qty-kgprice search-option input-xl input-contrast" type="text" placeholder="Kg" name="qty"></input>
+    <input id="kgprice" class="form-inline qty-kgprice search-option input-xl input-contrast" type="text" placeholder="Kg prijs" name="checkout"></input>
+    <div class="select select-xl">
         <select id="category" name="categories">
             <option value="1">
                 Groenten
@@ -29,7 +29,7 @@
             </option>
         </select>
     </div>
-    <button id="add_product" class="btn-add form-inline btn" type="submit" ng-click="addProduct(newProduct, qty, kgprice)">Verkoop</button>
+    <button id="add_product" class="btn-add form-inline btn btn-xl" type="submit" ng-click="addProduct(newProduct, qty, kgprice)">Verkoop</button>
 </form>
 </div>
     <div id="verkoop-text" class="block">

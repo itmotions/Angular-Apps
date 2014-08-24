@@ -24,8 +24,9 @@
     <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     
 </head>
+    	
 <body>
-	
+<div id="wrapper">
 	<!-- Navigation -->
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
@@ -70,19 +71,39 @@
 	</nav>
 
 	<div class="page" ng-view></div>
-    
-    <!-- Footer container -->
-  <div id="footer-container" class="container">    
-    <footer id="footer">
-      <div id="footer-text">
-        <span>&copy;2014 Verse Markt</span> &middot;
-        <span><a href="/legal/websiteterms">Terms</a></span> &middot;
-        <span><a href="/legal/privacypolicy">Privacy Policy</a></span>
+    </body> 
+   
+    <div class="push"></div>
+   </div> <!-- wrapper --> 
+     
+     <!-- Footer container -->  
+     <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <span class="copyright">Copyright &copy; Versemarkt 2014</span>
         </div>
-    </footer>
-  </div>
-    
-    
+        <div class="col-md-4">
+          <ul class="list-inline social-buttons">
+            <li><a href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li><a href="http://facebook.com/versemarkt"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-inline quicklinks">
+            <li><a href="#">Privacy Policy</a>
+            </li>
+            <li><a href="#">Terms of Use</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 	   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-route/angular-route.min.js"></script>
@@ -104,5 +125,7 @@
 	<script src="js/firebase.utils.js"></script>
 	<script src="js/simpleLogin.js"></script>
 	<script src="js/changeEmail.js"></script>
-</body>
+   
+
+  
 </html>

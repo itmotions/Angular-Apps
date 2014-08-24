@@ -4,9 +4,23 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+
+
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#wrapper {
+min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -75px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.push {
+    height: 75px;
+    margin-bottom: 75px;
 }
 
 .text-muted {
@@ -71,6 +85,21 @@ h6 {
 
 .bg-darkest-gray {
     background-color: #222;
+}
+
+.input-xl, .select-xl {
+    padding: 20px 40px;
+}
+
+.select {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    border-right: 0px;
+    border-radius: 0px;
+    border: 1px solid #DCE0E0;
+    background-color: #FFF;
+    color: #565A5C;
 }
 
 .btn-primary {
@@ -751,9 +780,12 @@ section#contact .text-danger {
 }
 
 footer {
-    text-align: center;
-    margin-top: 99%;
-    position:absolute;
+    position: relative;
+    margin-top:100%;
+
+    width: 100%;
+    height: 60px;
+    background-color: #FBA16C;
 }
 
 footer span.copyright {
@@ -784,7 +816,8 @@ ul.social-buttons li a {
     line-height: 40px;
     outline: 0;
     color: #fff;
-    background-color: #222;
+    margin-top: 15%;
+    background-color: #a39480;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s;
@@ -793,7 +826,11 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    background-color: #fed136;
+    background-color: #a6d785;
+}
+
+.fa-twitter, .fa-facebook, .fa-linkedin {
+    padding-left: 30%;
 }
 
 .btn:focus,
@@ -894,6 +931,7 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #fed136;
+    height: 100%;
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
