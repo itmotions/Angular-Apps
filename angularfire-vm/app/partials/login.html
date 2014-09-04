@@ -1,24 +1,28 @@
-
-<h2>Login Page</h2>
-
+<section id="login" class="container"> 
+<h2 ng-hide="createMode" class="section-heading">Login Page</h2>
+<h2 ng-show="createMode" class="section-heading">Sign Up Page</h2>
+<div class="form-center">
 <form>
+    
     <label>
         <span>email</span>
-        <input type="text" ng-model="email" />
+        <input type="text" class="input-xl" ng-model="email" />
     </label>
     <label>
         <span>password</span>
-        <input type="password" ng-model="pass" />
+        <input type="password" class="input-xl" ng-model="pass" />
     </label>
     <label ng-cloak ng-show="createMode">
         <span>confirm pass</span>
-        <input type="password" ng-model="confirm" />
+        <input type="password" class="input-xl" ng-model="confirm" />
     </label>
-    <button ng-click="login(email, pass)" ng-hide="createMode">Log In</button>
-    <button ng-click="createMode = true" ng-hide="createMode">Register</button>
-    <button ng-cloak ng-show="createMode" ng-click="createAccount(email, pass, confirm)">Create Account</button>
-    <button ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>
+    <button ng-click="login(email, pass)" class="btn-xl" ng-hide="createMode">Log In</button>
+    <button ng-click="createMode = true" class="btn-xl" ng-hide="createMode">Register</button>
+    <button ng-cloak ng-show="createMode" class="btn-xl" ng-click="createAccount(email, pass, confirm)">Create Account</button>
+    <button ng-cloak ng-show="createMode" class="btn-xl" ng-click="createMode = false">Cancel</button>
 
     <p ng-show="err" class="error">{{err}}</p>
+        
 </form>
-
+</div>
+</section>
