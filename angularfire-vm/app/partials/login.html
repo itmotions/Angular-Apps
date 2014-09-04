@@ -16,10 +16,10 @@
         <span>confirm pass</span>
         <input type="password" class="input-xl" ng-model="confirm" />
     </label>
-    <button ng-click="login(email, pass)" class="btn-xl" ng-hide="createMode">Log In</button>
-    <button ng-click="createMode = true" class="btn-xl" ng-hide="createMode">Register</button>
-    <button ng-cloak ng-show="createMode" class="btn-xl" ng-click="createAccount(email, pass, confirm)">Create Account</button>
-    <button ng-cloak ng-show="createMode" class="btn-xl" ng-click="createMode = false">Cancel</button>
+    <button ng-click="login(email, pass)" class="btn btn-xl" ng-hide="createMode">Log In</button>
+    <button ng-click="createMode = true" class="btn btn-xl" ng-hide="createMode">Register</button>
+    <button ng-cloak ng-show="createMode" class="btn btn-xl" ng-click="createAccount(email, pass, confirm)">Create Account</button>
+    <button ng-cloak ng-show="createMode" class="btn btn-xl" ng-click="createMode = false">Cancel</button>
 
     <p ng-show="err" class="error">{{err}}</p>
         
